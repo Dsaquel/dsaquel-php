@@ -1,0 +1,164 @@
+
+body{
+    font-style: arial;
+    background-color: #15202B;
+    color: #ffff;
+}
+
+.flex{
+    display: flex 
+}
+header{
+    justify-content: space-between;
+}
+
+.changeImg {
+    width: 123;
+    height: 140;
+    background: url("Picture/1.png") ;
+    display: flex;
+    align-items: start;
+    border-radius: 50%;
+    
+}
+.changeImg:hover {
+    background: url("Picture/2.png") ;
+    box-shadow: 1px 1px #5271ff;
+}
+nav{
+    font-size: 30px;
+    display: flex;
+    margin-top: 40px;
+}
+
+nav a{
+    color: #ffff;
+    padding-right: 10px;
+}
+nav a:hover{
+    color: #ffbd59;
+}
+
+.labelNav{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    font-size: 30px;
+    justify-content: center;
+}
+.myInput{
+    width: 60%;
+}
+
+.row{
+    flex-direction: row;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+
+
+#sectionIndex{
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+article{
+    border-width: 5px;
+    border-style: solid;
+    border-top-color: #ffbd59;
+    border-bottom-color: #5271ff;
+    border-right-color: #5271ff;
+    border-left-color: #ffbd59;
+    margin-top: 50px;
+    transition: transform .2s;
+    text-align:center;
+    padding-right: auto;
+    padding-left: auto;
+}
+
+article:hover{
+    border-top-color: #5271ff;
+    border-bottom-color: #ffbd59;
+    border-left-color: #5271ff;
+    border-right-color: #ffbd59;
+    border-style: solid;
+    border-radius: 10px;
+    transform: scale(1.25);
+    background-color: #15202B;
+}
+
+#more {display: none;}
+
+footer{
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+}
+#bloc_page
+{
+    width: 1600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#fixedFooter{
+    position: relative; 
+}  
+i{
+    padding-left: 100px;
+}
+#twitter{
+    cursor: pointer;
+}
+#twitter:hover{
+    color: #1DA1F2;
+}
+i:hover{
+    cursor: pointer;
+}
+#Afficher {display: none;}
+
+main h1{
+    text-align: center;
+}
+section div{
+    text-align: center;
+    border-style: solid;
+    width: 500;
+    margin-left: auto;
+    margin-right: auto;
+}
+.page{
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 25px;
+}
+
+
+div img{
+    border-style: solid;
+}
+
+form.form-example {
+    display: table;
+}
+
+div.form-example {
+    display: table-row;
+}
+
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-right: 10px;
+}

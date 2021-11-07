@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Manga</title>
+    <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" media="screen and (max-width: 1280px)" href="smallRes_style.css">
+</head>
+
+<body>
+    <div id="bloc_page">
+        <header class="flex">
+            <a href="index.html">
+                <div class="changeImg"></div>
+            </a>
+            <h1>Hello world</h1>
+            <nav>
+                <a href="#mail">Contacts </a>
+                <a href="#myInput">Manga </a>
+                <a href="pageJeux.html"> Divertissement </a>
+                <a href="https://www.cnam.fr/"> École</a>
+            </nav>
+        </header>
+
+        <div class="labelNav">
+            <label for="">Recherche ton manga préféré :
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="One piece"
+                    title="Type in a name"></label>
+        </div>
+        <main id="myMain">
+            <section id="sectionIndex">
+                <article>
+                    <h2>One piece</h2>
+                    <a href="page1.html">
+                        <img src="Picture/one_piece.jpg" alt="Luffy et ses compagnons">
+                    </a>
+                    <p>Vogue en mer</p>
+                    <button> <a href="page1.html"> En savoir plus</a></button>
+                </article>
+                <article>
+                    <h2>Hunter x Hunter</h2>
+                    <a href="page2.html">
+                        <img src="Picture/hxh.jpg" alt="">
+                    </a>
+                    <p>grosse dinguerie</p>
+                    <button> <a href="page2.html"> En savoir plus</a></button>
+                </article>
+                <article>
+                    <h2>Naruto</h2>
+                    <a href="page3.html">
+                        <img src="Picture/naruto.jpg" alt="">
+                    </a>
+                    <p>ninja</p>
+                    <button> <a href="page3.html"> En savoir plus</a></button>
+                </article>
+                <article>
+                    <h2>Bleach</h2>
+                    <a href="page4.html">
+                        <img src="Picture/bleach.jpg" alt="">
+                    </a>
+                    <p>Shinigami vs hollow</p>
+                    <button> <a href="page4.html"> En savoir plus</a></button>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <a id="twitter" href="https://twitter.com/Dsaquel"><i class="fab fa-twitter fa-3x "></i></a>
+            <a id="mail"><i class="fas fa-envelope fa-3x "></i></a>
+            <a id="insta"><i class="fab fa-instagram fa-3x "></i></a>
+            <a id="telephone"><i class="fas fa-phone-alt fa-3x "></i></a>
+        </footer>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
