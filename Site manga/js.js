@@ -11,7 +11,7 @@ document.getElementById("telephone").addEventListener("click", function () {
     alert("0782424867");
 });
 
-function myFunction() {
+function searchManga() {
     let input, filter, main, article, h2, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -28,7 +28,7 @@ function myFunction() {
     }
 }
 
-function myFunction2() {
+function readMore() {
     let dots = document.getElementById("dots");
     let moreText = document.getElementById("more");
     let btnText = document.getElementById("myBtn");
