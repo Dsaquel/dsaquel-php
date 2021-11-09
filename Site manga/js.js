@@ -43,12 +43,59 @@ function readMore() {
         moreText.style.display = "inline";
     }
 }
-
-class FormData {
-    constructor(email, name) {
-        this.email = email
-        this.name = name
+let mangas = [
+    {
+        name: "One piece",
+        link: "page1.html",
+        image: "Picture/one_piece.jpg",
+        p: "Vogue en mer",
+        button: "En savoir plus",
+    },
+    {
+        name: "Hunter x Hunter",
+        link: "page2.html",
+        image: "Picture/hxh.jpg",
+        p: "grosse dinguerie",
+        button: "En savoir plus",
     }
-}
+];
 
 
+function createManga(manga) {
+    for (let i = 0; i < manga.length; i++) {
+        let name = manga[i].name
+        let link = manga[i].link
+        let image = manga[i].image
+        let text = manga[i].text
+        let myButton = manga[i].myButton  + "En savoir plus"
+
+
+        let h2 = document.createElement("h2")
+        let a = document.createElement("a")
+        let img = document.createElement("img")
+        let p = document.createElement("p")
+        let button = document.createElement("button")
+
+        h2.innerHTML = name
+        a.href = link
+        img.src = image
+        p.innerHTML = text
+        button.innerHTML = myButton
+
+        let article = document.createElement("article")
+        let section = document.getElementById("sectionIndex")
+
+        article.appendChild(h2)
+        a.appendChild(img)
+        article.appendChild(p)
+        article.appendChild(button)
+        button.appendChild(a)
+        
+        section.appendChild(article)
+
+    };
+};
+
+
+
+createManga(mangas)
