@@ -67,7 +67,9 @@ button{
     margin-bottom: 10px;
     padding-bottom: 5px;
 }
-
+button:hover{
+    cursor: pointer;
+}
 article{
     border-width: 5px;
     border-style: solid;
@@ -78,8 +80,6 @@ article{
     margin-top: 50px;
     transition: transform .2s;
     text-align:center;
-    padding-right: auto;
-    padding-left: auto;
 }
 
 article:hover{

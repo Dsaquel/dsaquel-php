@@ -48,16 +48,31 @@ let mangas = [
         name: "One piece",
         link: "page1.html",
         image: "Picture/one_piece.jpg",
-        p: "Vogue en mer",
-        button: "En savoir plus",
+        text: "Vogue en mer",
+        myButton: "En savoir plus",
     },
     {
         name: "Hunter x Hunter",
         link: "page2.html",
         image: "Picture/hxh.jpg",
-        p: "grosse dinguerie",
-        button: "En savoir plus",
-    }
+        text: "grosse dinguerie",
+        myButton: "En savoir plus",
+    },
+    {
+        name:"Naruto",
+        link: "page3.html",
+        image: "Picture/naruto.jpg",
+        text: "ninja",
+        myButton: "En savoir plus",
+    },
+    {
+        name:"Bleach",
+        link: "page4.html",
+        image: "Picture/bleach.jpg",
+        text: "Shinigami vs hollow",
+        myButton: "En savoir plus",
+    },
+
 ];
 
 
@@ -67,15 +82,16 @@ function createManga(manga) {
         let link = manga[i].link
         let image = manga[i].image
         let text = manga[i].text
-        let myButton = manga[i].myButton  + "En savoir plus"
-
-
+        let myButton = manga[i].myButton
+        
         let h2 = document.createElement("h2")
         let a = document.createElement("a")
         let img = document.createElement("img")
         let p = document.createElement("p")
         let button = document.createElement("button")
-
+        button.onclick = function() {
+            window.location = a;
+        }
         h2.innerHTML = name
         a.href = link
         img.src = image
@@ -86,12 +102,15 @@ function createManga(manga) {
         let section = document.getElementById("sectionIndex")
 
         article.appendChild(h2)
+        
+        article.appendChild(a)
         a.appendChild(img)
+        
         article.appendChild(p)
         article.appendChild(button)
-        button.appendChild(a)
         
         section.appendChild(article)
+
 
     };
 };
