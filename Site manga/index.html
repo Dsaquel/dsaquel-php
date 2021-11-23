@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Manga</title>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" media="screen and (max-width: 1280px)" href="smallRes_style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1280px)" href="css/smallRes_style.css">
 </head>
 
 <body>
@@ -24,7 +24,18 @@
                 <a href="https://www.cnam.fr/"> École</a>
             </nav>
         </header>
-
+        <ul>
+            <li><a href="#nouveauManga">Nouveautés</a></li>
+            <li><a href="#mangaAvenir">Prochainement</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Genre</a>
+                <div class="dropdown-content" id="menus">
+                    <a href="#" onclick="filterMangas(this)">Action</a>
+                    <a href="#" onclick="filterMangas(this)">Aventure</a>
+                    <a href="#" onclick="filterMangas(this)">Fantasy</a>
+                </div>
+            </li>
+        </ul>
         <div class="labelNav">
             <label for="">Recherche ton manga préféré :
                 <input type="text" id="myInput" onkeyup="searchManga()" placeholder="One piece"

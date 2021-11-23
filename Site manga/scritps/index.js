@@ -1,7 +1,7 @@
 let mangas = [
     {
         name: "One piece",
-        link: "page1.html",
+        link: "detailManga/onePieceDetail.html",
         image: "Picture/one_piece.jpg",
         text: "Vogue en mer",
         myButton: "En savoir plus",
@@ -9,7 +9,7 @@ let mangas = [
     },
     {
         name: "Hunter x Hunter",
-        link: "page2.html",
+        link: "detailManga/hunterXHunterDetail.html",
         image: "Picture/hxh.jpg",
         text: "grosse dinguerie",
         myButton: "En savoir plus",
@@ -17,7 +17,7 @@ let mangas = [
     },
     {
         name: "Naruto",
-        link: "page3.html",
+        link: "detailManga/narutoDetail",
         image: "Picture/naruto.jpg",
         text: "ninja",
         myButton: "En savoir plus",
@@ -25,7 +25,7 @@ let mangas = [
     },
     {
         name: "Bleach",
-        link: "page4.html",
+        link: "detailManga/bleachDetail",
         image: "Picture/bleach.jpg",
         text: "Shinigami vs hollow",
         myButton: "En savoir plus",
@@ -118,7 +118,6 @@ function removeMangas () {
 
 function filterMangas(elementClicked) {
     const gender = elementClicked.textContent
-    console.log('🚀 ~ gender', gender)
     const mangasFiltered = mangas.filter(function(manga){
         return manga.genders.includes(gender)
     })
@@ -137,16 +136,3 @@ document.getElementById("telephone").addEventListener("click", function () {
     alert("0782424867");
 });
 
-
-// aller vérifier si dans l'url il y a un genre 
-// si oui alors filtrer le tabkeau de managa sur ce genre et ensuite appeler createManga avec ce tableau triée
-// sinon appeler createManga avec le tableau non trié
-
-// const url = ""
-// const genre = "Action" // false
-// if( genre) {g
-//     const mangasFiltered = ...
-//     createMangas(mangasFiltered)
-// } else {
-//     createMangas(mangas)
-// }
