@@ -17,7 +17,7 @@ let mangas = [
     },
     {
         name: "Naruto",
-        link: "detailManga/narutoDetail",
+        link: "detailManga/narutoDetail.html",
         image: "Picture/naruto.jpg",
         text: "ninja",
         myButton: "En savoir plus",
@@ -25,7 +25,7 @@ let mangas = [
     },
     {
         name: "Bleach",
-        link: "detailManga/bleachDetail",
+        link: "detailManga/bleachDetail.html",
         image: "Picture/bleach.jpg",
         text: "Shinigami vs hollow",
         myButton: "En savoir plus",
