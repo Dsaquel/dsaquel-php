@@ -1,3 +1,9 @@
+const elem = document.getElementById("myDropdown")
+function dropdown() {
+    elem.classList.toggle("show");
+}
+
+
 let mangas = [
     {
         name: "One piece",
@@ -60,7 +66,7 @@ function createMangas(mangas) {
         let image = mangas[i].image
         let text = mangas[i].text
         let myButton = mangas[i].myButton
-        
+
         let h2 = document.createElement("h2")
         let a = document.createElement("a")
         let img = document.createElement("img")
@@ -109,7 +115,7 @@ function searchManga() {
     }
 }
 
-function removeMangas () {
+function removeMangas() {
     const mainSection = document.getElementById("sectionIndex");
     while (mainSection.firstChild) {
         mainSection.removeChild(mainSection.lastChild);
@@ -118,7 +124,7 @@ function removeMangas () {
 
 function filterMangas(elementClicked) {
     const gender = elementClicked.textContent
-    const mangasFiltered = mangas.filter(function(manga){
+    const mangasFiltered = mangas.filter(function (manga) {
         return manga.genders.includes(gender)
     })
     createMangas(mangasFiltered)
@@ -135,4 +141,5 @@ document.getElementById("insta").addEventListener("click", function () {
 document.getElementById("telephone").addEventListener("click", function () {
     alert("0782424867");
 });
+
 
