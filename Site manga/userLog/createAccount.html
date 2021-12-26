@@ -7,49 +7,36 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>Inscription</title>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/form_createAcc.css">
 </head>
 
 <body>
 
     <div id="bloc_page">
         <header class="flex">
-            <a href="index.html">
+            <a href="../index.html">
                 <div class="changeImg"></div>
             </a>
-            <h1>Hello world</h1>
-            <nav>
-                <a href="#mail">Contacts </a>
-                <a href="#myInput">Manga </a>
-                <a href="pageJeux.html"> Divertissement </a>
-                <a href="https://www.cnam.fr/"> École</a>
-            </nav>
         </header>
 
         <main>
             <form id="regForm" action="../index.html">
 
-                <h1>Register:</h1>
+                <h1>Inscription</h1>
 
                 <!-- One "tab" for each step in the form: -->
-                <div class="tab"> Nom Prenom:
-                    <p><input placeholder="Prenom..." oninput="this.className = ''" name="prenom"></p>
-                    <p><input placeholder="Nom..." oninput="this.className = ''" name="nom"></p>
+                <div class="tab">
+                    <p><input class="login-box__form-input" placeholder="Nom..."  name="nom"></p>
+                    <p><input class="login-box__form-input" placeholder="Prenom..." name="prenom"></p>
                 </div>
 
-                <div class="tab"> Contacts:
-                    <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-                    <p><input placeholder="telephone..." oninput="this.className = ''" name="phone"></p>
-                </div>
-
-                <div class="tab"> Date de naissance:
-                    <p><input placeholder="jj" oninput="this.className = ''" name="dd"></p>
-                    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-                    <p><input placeholder="aaaa" oninput="this.className = ''" name="yyyy"></p>
+                <div class="tab">
+                    <p><input class="login-box__form-input" placeholder="jj/mm/aaaa" name="birthday"></p>
                 </div>
 
                 <div class="tab"> Mot de passe:
                     <p>
-                        <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        <input class="login-box__form-input" class="login-box__form-input" placeholder="Nouveau mot de passe" type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                             required>
                     </p>
@@ -62,16 +49,17 @@
                         <p id="length" class="invalid">Minimum <b>8 caractères</b></p>
                     </div>
 
-                    <p><input placeholder="Confirmer le mot de passe" oninput="this.className = ''" name="pword"
+                    <p><input class="login-box__form-input" placeholder="Confirmer le mot de passe" name="pword"
                             type="password">
                     </p>
-                    <p><a href="recupPassword.html">J'ai oublié mon mot de passe</a></p>
                 </div>
 
-                <div class="tab"> Nom d'utilisateur:
-                    <p><input placeholder="exemple: Gotaga" oninput="this.className = ''" name="pseudo"></p>
+                <div class="tab"> Nom d'utilisateur: <br>
+                    <small>sera vue par le monde entier !</small>
+                    <p><input class="login-box__form-input" placeholder="Xx_GamerTrickshot_xX" name="pseudo"></p><hr>
+                    
                     <label>
-                        <input type="checkbox" name="subscribe"> En cochant cette case vous accepter les <a href="#">conditions générales</a>. 
+                        <input type="checkbox" oninput="this.className = 'checked'" name="subscribe"> En cochant cette case vous accepter les <a href="#">conditions générales</a>. 
                     </label>
                 </div>
 
@@ -84,7 +72,6 @@
 
                 <!-- Circles which indicates the steps of the form: -->
                 <div style="text-align: center; margin-top:40px;">
-                    <span class="step"></span>
                     <span class="step"></span>
                     <span class="step"></span>
                     <span class="step"></span>
