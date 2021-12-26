@@ -18,22 +18,38 @@
             </a>
             <h1>Hello world</h1>
             <nav>
-                <a href="#myInput">Manga</a>
-                <a href="pageJeux.html"> Divertissement </a>
+                <i onclick="displayLogForm()" class="fas fa-user"></i>
+                <div class="login-box">
+                    <div id="logForm" class="login-box__content arrow" role="tooltip">
+                        <form method="POST" action="serverData/logData.php" accept-charset="UTF-8"
+                            class="login-box_section arrow" data-pooper-arrow>
+                            <h2 class="login-box__row login-box__row-title">Se connecter pour continuer</h2>
+                            <div class="login-box__row login-box__row--inputs">
+                                <input class="login-box__form-input" name="username" placeholder="nom d'utilisateur"
+                                    required="">
+                                <input class="login-box__form-input" name="password" placeholder="mot de passe"
+                                    required="">
+                            </div>
+                            <div class="login-box__row login-box__row--error">
+                                Identifiants incorrects
+                            </div>
+                            <div class="login-box_row">
+                                <a href="#" class="login-box_link">J'ai oublié mes identifiants</a>
+                            </div>
+                            <div class="login-box__row login-box__row--actions">
+                                <div class="login-box__action">
+                                    <button class="btn-osu-big btn-osu-big--nav-popup js-captcha--submit-button"
+                                        data-disable-with="Connexion...">
+                                        <div class="btn-osu-big__content">
+                                            <span class="btn-osu-big__left">
+                                                Se connecter
+                                            </span>
 
-
-                <div class="dropdown">
-                    <i onclick="dropdown()" class="fas fa-user dropbtn"></i>
-                    <div onblur="afficherMessage()" id="myDropdown" class="dropdown-content">
-                        <form action="">
-                            <h1>Connecter vous</h1>
-
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Entrer Email" name="email" required>
-
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Entrer mot de passe" name="psw" required>
-                            <p><a href="userLog/logIn.html">Mot de passe oublié</a></p>
+                                            <span class="fas fa-fw fa-sign-in-alt"></span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -61,10 +77,10 @@
             </section>
         </main>
         <footer>
-            <a id="twitter" href="https://twitter.com/Dsaquel"><i class="fab fa-twitter fa-3x "></i></a>
-            <a id="mail"><i class="fas fa-envelope fa-3x "></i></a>
-            <a id="insta"><i class="fab fa-instagram fa-3x "></i></a>
-            <a id="telephone"><i class="fas fa-phone-alt fa-3x "></i></a>
+            <a id="twitter" href="https://twitter.com/Dsaquel"><i class="fab fa-twitter fa-3x iconContact"></i></a>
+            <a id="mail"><i class="fas fa-envelope fa-3x iconContact"></i></a>
+            <a id="insta"><i class="fab fa-instagram fa-3x iconContact"></i></a>
+            <a id="telephone"><i class="fas fa-phone-alt fa-3x iconContact"></i></a>
         </footer>
     </div>
     <script src="scritps/index.js"></script>

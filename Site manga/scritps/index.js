@@ -1,9 +1,11 @@
-const elem = document.getElementById("myDropdown")
-function dropdown() {
-    elem.classList.toggle("show");
+function displayLogForm() {
+    const x = document.getElementById("logForm");
+    if (x.style.visibility === "hidden") {
+        x.style.visibility = "visible";
+    } else {
+        x.style.visibility = "hidden";
+    }
 }
-
-
 let mangas = [
     {
         name: "One piece",
