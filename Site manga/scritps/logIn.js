@@ -71,27 +71,27 @@ function fixStepIndicator(n) {
     x[n].className += " active";
 }
 
-const myInput = document.getElementById("psw");
+const password = document.getElementById("psw");
 const letter = document.getElementById("letter");
 const capital = document.getElementById("capital");
 const number = document.getElementById("number");
 const length = document.getElementById("length");
 
 // When the user clicks on the password field, show the message box
-myInput.onfocus = function () {
+password.onfocus = function () {
     document.getElementById("message").style.display = "block";
 }
 
 // When the user clicks outside of the password field, hide the message box
-myInput.onblur = function () {
+password.onblur = function () {
     document.getElementById("message").style.display = "none";
 }
 
 // When the user starts to type something inside the password field
-myInput.onkeyup = function () {
+password.onkeyup = function () {
     // Validate lowercase letters
     const lowerCaseLetters = /[a-z]/g;
-    if (myInput.value.match(lowerCaseLetters)) {
+    if (password.value.match(lowerCaseLetters)) {
         letter.classList.remove("invalid");
         letter.classList.add("valid");
     } else {
@@ -101,7 +101,7 @@ myInput.onkeyup = function () {
 
     // Validate capital letters
     const upperCaseLetters = /[A-Z]/g;
-    if (myInput.value.match(upperCaseLetters)) {
+    if (password.value.match(upperCaseLetters)) {
         capital.classList.remove("invalid");
         capital.classList.add("valid");
     } else {
@@ -111,7 +111,7 @@ myInput.onkeyup = function () {
 
     // Validate numbers
     const numbers = /[0-9]/g;
-    if (myInput.value.match(numbers)) {
+    if (password.value.match(numbers)) {
         number.classList.remove("invalid");
         number.classList.add("valid");
     } else {
@@ -120,7 +120,7 @@ myInput.onkeyup = function () {
     }
 
     // Validate length
-    if (myInput.value.length >= 8) {
+    if (password.value.length >= 8) {
         length.classList.remove("invalid");
         length.classList.add("valid");
     } else {
