@@ -29,7 +29,6 @@ header{
 nav{
     font-size: 30px;
     display: flex;
-    margin-top: 40px;
     width: 100%;
 }
 
@@ -238,7 +237,6 @@ input[type=text], input[type=submit] {
   box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
   transform: translateZ(0);
   position: absolute;
-  top: 0;
   width: 20%;
   display: flex;
   flex-direction: column;
