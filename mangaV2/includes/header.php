@@ -3,7 +3,7 @@
         <div class="login-box">
             <i onclick="displayLogForm()" class="fas fa-user" style="transform: translateX(1350px);"></i>
             <div id="logForm" class="login-box__content" style="transform: translateX(1180px) ;visibility: hidden;">
-                <form method="POST" action="php/login.php" accept-charset="UTF-8" class="login-box__section login-box__section--login">
+                <form method="POST" action="index.php" accept-charset="UTF-8" class="login-box__section login-box__section--login">
                     <h2 class="login-box__row login-box__row--title">Se connecter pour continuer</h2>
                     <div class="login-box__row login-box__row--inputs">
                         <input class="login-box__form-input" name="pseudoOrEmail" placeholder="email ou nom d'utilisateur" required="">
@@ -54,14 +54,14 @@
         </div>
     </nav>
     <ul>
-        <li><a href="#nouveauManga">Nouveautés</a></li>
-        <li><a href="#mangaAvenir">Prochainement</a></li>
+        <li><a href="app/production.php">Ma bibliothèque</a></li>
+        <li><a href="app/production.php">Prochainement</a></li>
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Genre</a>
+            <a href="app/production.php" class="dropbtn">Genre</a>
             <div class="dropdown-content" id="menus">
-                <a href="#" onclick="filterMangas(this)">Action</a>
+                <!-- <a href="#" onclick="filterMangas(this)">Action</a>
                 <a href="#" onclick="filterMangas(this)">Aventure</a>
-                <a href="#" onclick="filterMangas(this)">Fantasy</a>
+                <a href="#" onclick="filterMangas(this)">Fantasy</a> -->
             </div>
         </li>
     </ul>

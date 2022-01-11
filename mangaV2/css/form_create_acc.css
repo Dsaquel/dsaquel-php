@@ -1,6 +1,3 @@
-
-
-/* Style the form */
 #regForm {
     background-color: #333;
     margin: auto;
@@ -11,7 +8,6 @@
     color: #fff;
 }
 
-/* Style the input fields */
 .login-box__form-input {
     border-radius: 4px;
     border: none;
@@ -26,18 +22,15 @@
 
 
 
-/* Mark input boxes that gets an error on validation: */
 input.invalid {
     background-color: #ffdddd;
 }
 
-/* Hide all steps by default: */
 .tab {
     display: none;
     text-align: center;
 }
 
-/* Make circles that indicate the steps of the form: */
 .step {
     height: 15px;
     width: 15px;
@@ -49,29 +42,24 @@ input.invalid {
     opacity: 0.5;
 }
 
-/* Mark the active step: */
 .step.active {
     opacity: 1;
 }
 
-/* Mark the steps that are finished and valid: */
 .step.finish {
     background-color: #04AA6D;
 }
 
-/* Style the submit button */
 input[type=submit] {
     background-color: #04AA6D;
     color: white;
 }
 
-/* Style the container for inputs */
 .container {
     background-color: #f1f1f1;
     padding: 20px;
 }
 
-/* The message box is shown when the user clicks on the password field */
 #message {
     display: none;
     background: #15202b31;
@@ -87,7 +75,6 @@ input[type=submit] {
     font-size: 18px;
 }
 
-/* Add a green text color and a checkmark when the requirements are right */
 .valid {
     color: green;
 }
@@ -99,7 +86,6 @@ input[type=submit] {
 }
 
 
-/* Add a red text color and an "x" icon when the requirements are wrong */
 .invalid {
     color: red;
 }

@@ -1,60 +1,63 @@
-@media screen and (max-width: 1280px){
-    #bloc_page{
-    margin: auto;
-    width: auto;
-}
-
-    header{
+@media screen and (max-width: 1280px) {
+    #bloc_page {
+        margin: auto;
         width: auto;
     }
 
-    nav{
+    header {
+        width: auto;
+    }
+
+    nav {
         flex-direction: column;
         margin-top: -5px;
         border-style: solid;
         padding-left: 5px;
     }
 
-    section{
+    section {
         flex-wrap: wrap;
     }
-     
-    input{
+
+    input {
         height: 25px;
     }
 
-    article{
+    article {
         transition: none;
     }
 }
 
 
 
-@media screen and (max-width: 576px){
-    section{
+@media screen and (max-width: 576px) {
+    section {
         flex-direction: column;
     }
 
-    .labelNav{
+    .labelNav {
         flex-direction: column;
     }
 
-    label{
+    label {
         font-size: 25px;
     }
-    input{
+
+    input {
         width: 170px;
         height: 35px;
     }
 
-    article{
+    article {
         margin-left: 50px;
         margin-right: 50px;
     }
-    article:hover{
+
+    article:hover {
         transform: none;
     }
-    footer{
+
+    footer {
         flex-wrap: wrap;
         padding-right: 20px;
     }

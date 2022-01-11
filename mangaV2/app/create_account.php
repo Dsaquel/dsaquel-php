@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Inscription</title>
+    <title>Dsaquel - Inscription</title>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/form_create_acc.css">
 </head>
@@ -16,22 +16,19 @@
     </a>
     <div id="bloc_page">
         <main>
-            <form id="regForm" action="../php/users.php" method="POST">
+            <form id="regForm" action="../php/insert_users.php" method="POST">
 
                 <h1>Inscription</h1>
 
                 <!-- One "tab" for each step in the form: -->
+
                 <div class="tab">
                     <p><input class="login-box__form-input" placeholder="Nom..." name="nom"></p>
                     <p><input class="login-box__form-input" placeholder="Prenom..." name="prenom"></p>
                 </div>
 
                 <div class="tab">E-mail :
-                    <p><input class="login-box__form-input" placeholder="dupond@gmail.com" name="email"></p>
-                </div>
-
-                <div class="tab">
-                    <p><input class="login-box__form-input" placeholder="jj/mm/aaaa" name="birthday"></p>
+                    <p><input class="login-box__form-input" id="email" placeholder="dupond@gmail.com" name="email"></p>
                 </div>
 
                 <div class="tab"> Mot de passe:
@@ -46,14 +43,15 @@
                         <p id="number" class="invalid">Un <b>nombre</b></p>
                         <p id="length" class="invalid">Minimum <b>8 caractères</b></p>
                     </div>
-
-                    <p><input class="login-box__form-input" placeholder="Confirmer le mot de passe" name="pword" type="password">
+                    <H4>Confirmer le mot de passe :</H4>
+                    <p><input class="login-box__form-input" id="confirm_password" placeholder="Confirmer le mot de passe" name="pword" type="password">
                     </p>
                 </div>
 
                 <div class="tab"> Nom d'utilisateur: <br>
                     <small>sera vue par le monde entier !</small>
-                    <p><input class="login-box__form-input" placeholder="Xx_GamerTrickshot_xX" name="pseudo"></p>
+                    <a href="#username"></a>
+                    <p><input class="login-box__form-input" placeholder="Xx_GamerTrickshot_xX" name="username"></p>
                     <hr>
 
                     <label>
@@ -74,15 +72,12 @@
                     <span class="step"></span>
                     <span class="step"></span>
                     <span class="step"></span>
-                    <span class="step"></span>
                 </div>
             </form>
         </main>
-
         <?php include('../includes/footer.php'); ?>
     </div>
-    <script src="../js/logIn.js"></script>
-
+    <script src="../js/inscription.js"></script>
 </body>
 
 </html>
