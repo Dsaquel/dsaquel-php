@@ -1,0 +1,64 @@
+@media screen and (max-width: 1280px) {
+    #bloc_page {
+        margin: auto;
+        width: auto;
+    }
+
+    header {
+        width: auto;
+    }
+
+    nav {
+        flex-direction: column;
+        margin-top: -5px;
+        border-style: solid;
+        padding-left: 5px;
+    }
+
+    section {
+        flex-wrap: wrap;
+    }
+
+    input {
+        height: 25px;
+    }
+
+    article {
+        transition: none;
+    }
+}
+
+
+
+@media screen and (max-width: 576px) {
+    section {
+        flex-direction: column;
+    }
+
+    .labelNav {
+        flex-direction: column;
+    }
+
+    label {
+        font-size: 25px;
+    }
+
+    input {
+        width: 170px;
+        height: 35px;
+    }
+
+    article {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    article:hover {
+        transform: none;
+    }
+
+    footer {
+        flex-wrap: wrap;
+        padding-right: 20px;
+    }
+}
