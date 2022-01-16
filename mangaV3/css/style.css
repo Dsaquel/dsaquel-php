@@ -1,0 +1,168 @@
+@import url("form_create_acc.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #15202B;
+  font-size: 20px;
+  color: #fff;
+}
+
+#bloc_page {
+  width: 1600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.changeImg {
+  width: 123;
+  height: 140;
+  background: url("../pictures/square_blue.png");
+  display: flex;
+  border-radius: 50%;
+}
+
+.changeImg:hover {
+  background: url("../pictures/square_orange.png");
+  box-shadow: 1px 1px #5271ff;
+}
+
+nav {
+  font-size: 30px;
+  display: flex;
+  width: 100%;
+}
+
+nav a {
+  color: #ffff;
+  padding-right: 10px;
+}
+
+nav a:hover {
+  color: #ffbd59;
+}
+
+#search_form {
+  display: flex;
+  margin-top: 40px;
+  font-size: 30px;
+  justify-content: center;
+}
+
+#search {
+  width: 30%;
+}
+
+#section_index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.article {
+  border-width: 5px;
+  border-style: solid;
+  border-top-color: #ffbd59;
+  border-bottom-color: #5271ff;
+  border-right-color: #5271ff;
+  border-left-color: #ffbd59;
+  transition: transform .2s;
+  text-align: center;
+  margin: 5px;
+}
+
+.article:hover {
+  border-top-color: #5271ff;
+  border-bottom-color: #ffbd59;
+  border-left-color: #5271ff;
+  border-right-color: #ffbd59;
+  border-radius: 10px;
+  /* transform: scale(1.01); */
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+i {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover #menus {
+  display: block;
+}
+
+input[type=text] {
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
