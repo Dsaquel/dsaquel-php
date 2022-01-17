@@ -1,7 +1,10 @@
 <?php
+
+include_once('log_database_data.php'); 
+
 try
 {
-        $mysqlClient = new PDO('mysql:host=localhost;dbname=mangas;charset=utf8', 'root', 'root');
+        $mysqlClient = new PDO('mysql:host='.$host.';dbname='.$dbname.';', $username, $password);
 }
 catch(Exception $e)
 {

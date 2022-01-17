@@ -18,7 +18,7 @@
 
 <body>
 
-    <div id="modalProduction" class="modal">
+    <div class="modal">
         <div class="modal-content">
             Bonjour <?php echo $username ?>, cette page est en plein chantier et interdit au public !
             <hr>

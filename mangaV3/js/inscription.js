@@ -207,4 +207,6 @@ function modalError() {
     }
 }
 
-window.onload = modalError()
+if (window.location.href.length > 48){
+    window.onload = modalError()
+}

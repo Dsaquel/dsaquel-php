@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
     <title>Dsaquel - Inscription</title>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/form_create_acc.css">
@@ -19,10 +19,7 @@
             <?php
             if (!empty($_REQUEST['Message'])) {
                 echo sprintf('
-                <!-- The Modal -->
                 <div id="modal-error" class="modal">
-    
-                    <!-- Modal content -->
                     <div class="modal-content">
                         <div class="modal-header">
                             <span class="close-modal">&times;</span>

@@ -1,4 +1,3 @@
-/* FORM */
 @media (min-width: 900px) {
     .login-box {
         top: 90px;
@@ -75,7 +74,7 @@
     color: #fff;
     width: 340;
 }
-
+/* TODO: Delete ? */
 /* .login-box__row--error{ 
     color: #a8f;                //HTML Temporarily comment
   } */

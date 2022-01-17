@@ -52,6 +52,7 @@ if($num_rows_email != 0 && $num_rows_username != 0){
     header('Location: ' . $location . '?Message='. $Message);
 }
 
+// TODO: delete ?
 // if(!empty($_SESSION['message'])) {
 //    $message = $_SESSION['message'];
 

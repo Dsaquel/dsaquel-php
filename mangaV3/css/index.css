@@ -1,4 +1,4 @@
-@import url("form_create_acc.css");
+@import url("modal.css");
 
 html, body {
   margin: 0;
@@ -85,6 +85,7 @@ button:hover {
   border-left-color: #5271ff;
   border-right-color: #ffbd59;
   border-radius: 10px;
+  /* TODO: Delete ? */
   /* transform: scale(1.01); */
 }
 
