@@ -1,0 +1,137 @@
+@media (min-width: 900px) {
+    .login-box {
+        top: 90px;
+        transition: top .3s;
+    }
+}
+
+.login-box {
+    width: 100%;
+    z-index: 999;
+    top: 50px;
+}
+
+@media(min-width: 900px) {
+    .login-box__content {
+        border-radius: 4px;
+        width: 300px;
+        margin-top: 5px;
+    }
+}
+
+.login-box__content {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+    transform: translateZ(0);
+    position: absolute;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    overflow: hidden;
+    transition: none;
+    color: #999;
+    margin-top: 10px;
+}
+
+.login-box__section {
+    flex: none;
+    padding: 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.login-box__section--login {
+    background-color: #333;
+}
+
+.login-box__row {
+    flex: none;
+    margin: 0 0 10px;
+    display: flex;
+}
+
+.login-box__row--title {
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.login-box__row--inputs {
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.login-box__form-input {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: #222;
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #fff;
+    width: 340;
+}
+/* TODO: Delete ? */
+/* .login-box__row--error{ 
+    color: #a8f;                //HTML Temporarily comment
+  } */
+
+.login-box_link {
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: #fc2;
+    font-size: 14px;
+}
+
+.login-box__row--actions {
+    justify-content: flex-end;
+    align-items: center;
+    white-space: nowrap;
+    margin: -5px -5px 5px;
+}
+
+.login-box__action {
+    margin: 5px;
+}
+
+.btn-osu-big {
+    text-decoration: none;
+}
+
+.btn-osu-big--nav-popup {
+    text-align: left;
+    width: 120px;
+    height: 35px;
+    padding: 7px 10px;
+}
+
+.btn-osu-big__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-osu-big--nav-popup .btn-osu-big__content {
+    width: auto;
+    margin: 0 -5px;
+}
+
+.btn-osu-big__left {
+    margin: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.login-box__section--register {
+    background-color: #444;
+}
