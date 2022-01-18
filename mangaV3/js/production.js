@@ -2,4 +2,8 @@ onload = function () {
     const modal = document.getElementsByClassName("modal");
     modal.style.display = "block";
 }
-// Pour production.php
+
+document.querySelector('#mon-bouton').addEventListener('click', function(event) {
+    console.log(event.target);
+});
+

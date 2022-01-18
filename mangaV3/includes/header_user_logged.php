@@ -24,7 +24,7 @@
                     Paramètres
                 </a>
 
-                <a href="php/disconected.php" class="simple-menu__item">
+                <a href="php/disconnecting.php" class="simple-menu__item">
                     Se déconnecter
                 </a>
             </div>

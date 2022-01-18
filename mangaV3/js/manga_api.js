@@ -62,7 +62,7 @@ const base_url = "https://api.jikan.moe/v3";
 function searchAnime(event) {
 
     event.preventDefault();
-    
+
     const form = new FormData(this);
     const query = form.get("search");
 
@@ -183,7 +183,7 @@ function seasonLater(event) {
         .catch(err => console.warn(err.message));
 }
 
-function updateSeaonLater(data){
+function updateSeaonLater(data) {
     const searchResults = document.getElementById('section_index');
     const animeByCategories = data.anime
         .reduce((acc, anime) => {
@@ -192,7 +192,7 @@ function updateSeaonLater(data){
             acc[type].push(anime);
             return acc;
         }, {});
-
+    console.log(data)
     searchResults.innerHTML = Object.keys(animeByCategories).map(key => {
         const animesHTML = animeByCategories[key]
             .sort((a, b) => a.episodes - b.episodes)

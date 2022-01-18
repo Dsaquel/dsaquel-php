@@ -24,6 +24,7 @@
             <hr>
             Pas de panique je vous indique la sortie, ne touchez à rien ! <br>
             <img src="../pictures/bobleponge.gif">
+            <button id="mon-bouton"></button>
         </div>
 
 </body>

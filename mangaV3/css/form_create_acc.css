@@ -1,5 +1,10 @@
 @import url("modal.css");
-#regForm {
+
+body{
+    font-family:arial;
+}
+
+#registration {
     background-color: #333;
     margin: auto;
     padding: 40px;

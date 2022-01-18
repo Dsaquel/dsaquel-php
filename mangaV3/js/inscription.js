@@ -105,7 +105,7 @@ function nextPrev(n) {
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (currentTab >= x.length) {
-        document.getElementById("regForm").submit();
+        document.getElementById("registration").submit();
         return false;
     }
     showTab(currentTab);
@@ -133,7 +133,7 @@ function validateForm() {
     return valid;
 }
 
-function fixStepIndicator(n) {
+function fixStepIndicator() {
     let i, x = document.getElementsByClassName("step");
     for (i = 0; i < x.length; i++) {
         x[i].className = x[i].className.replace(" active", "");
