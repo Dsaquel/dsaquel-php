@@ -8,14 +8,12 @@ if (!isset($_POST['id'])) {
 
 $id = $_POST['id'];
 
-$delete_user = $mysqlClient->prepare('DELETE from user where id = :id');
+$delete_user = $mysqlClient->prepare('DELETE from user where id = :id JOIN user_mangsas');
 $delete_user->execute(
     [
         'id' => $id,
     ]
 );
-
-
 
 if ($delete_user->execute()) {
     session_start();

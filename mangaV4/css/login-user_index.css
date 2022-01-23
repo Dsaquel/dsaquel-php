@@ -31,6 +31,7 @@
     transition: none;
     color: #999;
     margin-top: 10px;
+    visibility: hidden;
 }
 
 .login-box__section {
@@ -72,7 +73,6 @@
     margin-bottom: 5px;
     font-size: 16px;
     color: #fff;
-    width: 340;
 }
 /* TODO: Delete ? */
 /* .login-box__row--error{ 

@@ -1,9 +1,3 @@
-nav {
-    position: absolute;
-    width: 100%;
-    z-index: 999;
-    top: 50px;
-}
 
 .nav-click-popup--user {
     margin-top: 40px;
@@ -13,6 +7,7 @@ nav {
     top: 100%;
     right: 0;
     height: 0;
+    visibility: hidden;
 }
 
 .simple-menu--nav2 {
@@ -28,9 +23,9 @@ nav {
     --item-hover-colour: var(--item-colour);
     --stripe-bg: hsl(var(--hsl-h1));
     transform: translateZ(0);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 50%);
     border-radius: var(--border-radius);
-    background-color: hsl(var(--hsl-b6));
+    background-color: rgb(24 23 28 / 100%);
     padding: 10px 5px;
     display: flex;
     flex-direction: column;
@@ -55,6 +50,7 @@ nav {
     position: relative;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     overflow: hidden;
+    background-image: url('https://pbs.twimg.com/media/FJTjcBaaMAAoNl2?format=jpg&name=small');
 }
 
 .simple-menu__item {

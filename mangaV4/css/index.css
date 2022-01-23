@@ -12,11 +12,22 @@ body {
   color: #fff;
 }
 
-#bloc_page {
+.bloc_page {
   width: 1600px;
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+
+header {
+  display: flex;
+  font-size: 30px;
+  width: 80%;
+  justify-content: space-between;
+}
+
+nav {
+  margin-top: 50px;
 }
 
 .changeImg {
@@ -32,13 +43,7 @@ body {
   box-shadow: 1px 1px #5271ff;
 }
 
-nav {
-  font-size: 30px;
-  display: flex;
-  width: 100%;
-}
-
-nav a {
+a {
   color: #ffff;
   padding-right: 10px;
 }
@@ -112,6 +117,10 @@ li {
   cursor: pointer;
 }
 
+ul li:hover {
+  background-color: #ddd;
+}
+
 li a, .dropbtn {
   display: inline-block;
   color: white;
@@ -163,8 +172,4 @@ input[type=submit] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-}
-
-.dropdown a:hover {
-  background-color: #ddd;
 }

@@ -74,7 +74,7 @@ $user = $userQuery->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 
 
-                        <input type="hidden" name="id" value="<?php echo $user[0]['id']; ?>">
+                        <input type="hidden" name="id_update" value="<?php echo $user[0]['id']; ?>">
 
 
 
@@ -82,7 +82,6 @@ $user = $userQuery->fetchAll(PDO::FETCH_ASSOC);
 
                     <form class="deleteUser" action="../php/delete_user.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $user[0]['id']; ?>">
-                        <label for="id">Delete le compte</label>
                         <input type="submit" value="Supprimer">
                     </form>
                 </div>

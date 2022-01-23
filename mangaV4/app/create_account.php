@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="bloc_page">
+    <div class="bloc_page">
         <a href="../index.php" style="width:fit-content;">
             <div class="changeImg"></div>
         </a>

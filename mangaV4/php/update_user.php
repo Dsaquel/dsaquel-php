@@ -3,7 +3,7 @@
 include_once('../database/log_database.php');
 $postData = $_POST;
 if (
-    !isset($postData['id'])
+    !isset($postData['id_update'])
     || !isset($postData['lastname'])
     || !isset($postData['firstname'])
     || !isset($postData['email'])
@@ -13,7 +13,7 @@ if (
     echo ('manque d info');
 }
 
-$id = $postData['id'];
+$id = $postData['id_update'];
 $lastname = $postData['lastname'];
 $firstname = $postData['firstname'];
 $email = $postData['email'];

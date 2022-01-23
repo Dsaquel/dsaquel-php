@@ -17,7 +17,6 @@ $checkEmail->execute(array(
 $num_rows_email = $checkEmail->rowCount();
 
 $checkUsername = $mysqlClient->prepare('SELECT username FROM user WHERE username=:username');
-
 $checkUsername->execute(array(
     'username' => $username,
 )) or die(print_r($checkUsername->errorInfo())); 
@@ -38,8 +37,9 @@ if ($num_rows_email == 0 && $num_rows_username == 0) {
         header('location: ../index.php');
     }
 }
-$location = '../app/create_account.php';
 
+
+$location = '../app/create_account.php';
 
 if($num_rows_email != 0 && $num_rows_username != 0){
     $Message = urldecode("Email et Pseudo déjà utilisé mdrr");
