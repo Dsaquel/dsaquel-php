@@ -1,28 +1,12 @@
 
-.nav-click-popup--user {
-    margin-top: 40px;
-}
-
 .nav-click-popup {
-    top: 100%;
-    right: 0;
     height: 0;
-    visibility: hidden;
-}
-
-.simple-menu--nav2 {
-    will-change: transform, opacity;
-    transition: none;
-    position: relative;
+    margin-top: 5px;
 }
 
 .simple-menu {
     --border-radius: 6px;
     --item-colour: inherit;
-    --item-hover-bg: hsl(var(--hsl-b5));
-    --item-hover-colour: var(--item-colour);
-    --stripe-bg: hsl(var(--hsl-h1));
-    transform: translateZ(0);
     box-shadow: 0 1px 3px rgb(0 0 0 / 50%);
     border-radius: var(--border-radius);
     background-color: rgb(24 23 28 / 100%);
@@ -32,9 +16,8 @@
     min-width: 150px;
     flex: none;
     font-size: 14px;
-    z-index: 101;
+    z-index: auto;
     position: relative;
-    color: hsl(var(--hsl-c1));
 }
 
 .simple-menu__header {

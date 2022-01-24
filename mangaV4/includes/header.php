@@ -4,7 +4,8 @@
     </a>
     <nav>
         <div class="login-box">
-            <i onclick="displayLogForm()" class="fas fa-user"></i>
+            <div onclick="displayLogForm(this)" class="displayLoginForm">connexion/inscription</div>
+            <i onclick="displayLogForm(this)" class="fas fa-user"></i>
             <div id="logForm" class="login-box__content">
                 <form method="POST" action="index.php" accept-charset="UTF-8" class="login-box__section login-box__section--login">
                     <h2 class="login-box__row login-box__row--title">Se connecter pour continuer</h2>
@@ -26,8 +27,15 @@
                                     <span class="btn-osu-big__left">
                                         Se connecter
                                     </span>
-
                                     <span class="fas fa-fw fa-sign-in-alt"></span>
+                                </div>
+                            </button>
+                            <button id="btnRegister" class="btn-osu-big btn-osu-big--nav-popup">
+                                <div class="btn-osu-big__content">
+                                    <a href="app/create_account.php" class="btn-osu-big__left">
+                                        s'inscrire
+                                    </a>
+                                    <span class="fas fa-sign-in-alt"></span>
                                 </div>
                             </button>
                         </div>
@@ -47,7 +55,6 @@
                                     <span class="btn-osu-big__left">
                                         S'inscrire
                                     </span>
-
                                     <span class="fas fa-sign-in-alt"></span>
                                 </div>
                             </a>

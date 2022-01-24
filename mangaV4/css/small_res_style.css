@@ -1,3 +1,9 @@
+@media screen and (max-width: 1480px) {
+    nav i {
+        margin-right: 60vh;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     .bloc_page {
         margin: auto;
@@ -5,12 +11,12 @@
     }
 
     header {
-        width: auto;
+        width: 100%;
     }
 
     nav {
         flex-direction: column;
-        margin-top: -5px;
+        margin-top: 10px;
         padding-left: 5px;
     }
 
@@ -18,29 +24,113 @@
         flex-wrap: wrap;
     }
 
-    input {
-        height: 25px;
-    }
-
     article {
         transition: none;
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .fa-user:before {
+        display: none;
+    }
 
+    .displayLoginForm {
+        display: block;
+    }
 
-@media screen and (max-width: 576px) {
+    /* user don't logged */
+    #logForm {
+        width: auto;
+        visibility: visible !important;
+    }
+
+    #btnRegister {
+        display: block !important;
+    }
+
+    .login-box__form-input {
+        padding: 15px 5px !important;
+        margin-left: 5px !important;
+    }
+
+    .login-box__action {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .login-box__section--register {
+        display: none !important;
+    }
+
+    .login-box__row--inputs {
+        flex-direction: row !important;
+        margin-left: 5px;
+    }
+
+    .login-box__row--title {
+        display: none;
+    }
+
+    /* user log */
+    .simple-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .simple-menu__header {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    #search {
+        width: 80%;
+        height: auto;
+    }
+
+    .dropdown .dropbtn {
+        display: none;
+    }
+
+    label {
+        display: none;
+    }
+
+    ul {
+        width: auto;
+    }
+
+    li {
+        float: none;
+    }
+
+    li.dropdown {
+        display: inherit;
+    }
+
+    ul li, li.dropdown {
+        text-align: center;
+    }
+
+    .dropdown-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: unset;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: flex;
+    }
+
+    .dropdown-content a {
+        margin: 0;
+    }
+
     section {
         flex-direction: column;
-    }
-    
-    label {
-        font-size: 25px;
-    }
-
-    input {
-        width: 170px;
-        height: 35px;
     }
 
     article {
@@ -51,9 +141,11 @@
     article:hover {
         transform: none;
     }
+}
 
-    footer {
-        flex-wrap: wrap;
-        padding-right: 20px;
+@media screen and (max-width: 438px) {
+
+    .login-box__row--inputs {
+        flex-direction: column !important;
     }
 }

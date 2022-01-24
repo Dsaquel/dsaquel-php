@@ -65,7 +65,7 @@ body {
 
 .account-edit__section {
     flex: none;
-    width: 250px;
+    width: auto;
     padding: 20px 20px 20px 10px;
 }
 

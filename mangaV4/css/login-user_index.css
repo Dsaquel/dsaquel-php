@@ -5,12 +5,6 @@
     }
 }
 
-.login-box {
-    width: 100%;
-    z-index: 999;
-    top: 50px;
-}
-
 @media(min-width: 900px) {
     .login-box__content {
         border-radius: 4px;
@@ -74,6 +68,10 @@
     font-size: 16px;
     color: #fff;
 }
+
+#btnRegister{
+    display: none;
+}
 /* TODO: Delete ? */
 /* .login-box__row--error{ 
     color: #a8f;                //HTML Temporarily comment
@@ -98,6 +96,7 @@
 
 .login-box__action {
     margin: 5px;
+    margin-top: 10px;
 }
 
 .btn-osu-big {

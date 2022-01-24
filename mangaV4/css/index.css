@@ -3,7 +3,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family:arial;
+  font-family: arial;
 }
 
 body {
@@ -13,22 +13,34 @@ body {
 }
 
 .bloc_page {
-  width: 1600px;
+  width: auto;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
 
 header {
+  margin: auto;
   display: flex;
   font-size: 30px;
-  width: 80%;
+  width: 1600px;
   justify-content: space-between;
 }
 
 nav {
+  flex-direction: column;
   margin-top: 50px;
 }
+
+.displayLoginForm {
+  display: none;
+}
+
+#logForm {
+  width: auto;
+  right: 0;
+}
+
 
 .changeImg {
   width: 123;
@@ -44,13 +56,12 @@ nav {
 }
 
 a {
-  color: #ffff;
+  color: black;
+  text-decoration: none;
   padding-right: 10px;
 }
 
-nav a:hover {
-  color: #ffbd59;
-}
+
 
 #search_form {
   display: flex;
@@ -69,9 +80,6 @@ nav a:hover {
   justify-content: space-around;
 }
 
-button:hover {
-  cursor: pointer;
-}
 
 .article {
   border-width: 5px;
@@ -95,6 +103,15 @@ button:hover {
   /* transform: scale(1.01); */
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+.button {
+  background-color: #5271ff;
+  box-shadow: 0px 8px 16px 0px rgba(25, 0, 105, 0.3);
+}
+
 footer {
   display: flex;
   justify-content: space-around;
@@ -106,6 +123,9 @@ i {
 }
 
 ul {
+  width: 1600px;
+  margin: auto;
+  margin-top: 5px;
   list-style-type: none;
   padding: 0;
   background-color: #333;
@@ -132,13 +152,16 @@ li.dropdown {
   display: inline-block;
 }
 
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 
 .dropdown-content a {
@@ -153,9 +176,6 @@ li.dropdown {
   background-color: #f1f1f1;
 }
 
-.dropdown:hover #menus {
-  display: block;
-}
 
 input[type=text] {
   padding: 12px;

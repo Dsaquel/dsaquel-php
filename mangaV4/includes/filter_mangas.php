@@ -1,6 +1,6 @@
 <ul>
-    <li><a href="app/production.php">Ma bibliothèque</a></li>
-    <li onclick="modalError()" id="mangasFuture">Prochainement</li>
+    <li onclick="modalError(this)">Ma bibliothèque</li>
+    <li><a onclick="seasonLater(event)">Prochainement</a></li>
     <li class="dropdown">
         <a class="dropbtn">Genre</a>
         <div class="dropdown-content" id="menus">

@@ -15,7 +15,6 @@
             <div class="changeImg"></div>
         </a>
         <h2 class="form-message">Laisse moi un message !</h2>
-        <div class="form-content">
             <form action="../php/check_email_sending.php" method="POST">
                 <div class="grid">
                     <input class="champs" type="text" name="mailUser" placeholder="Votre email">
@@ -30,7 +29,6 @@
                 </div>
                 <button id="valide-contact" type="submit" name="submit">Envoyer</button>
             </form>
-        </div>
 
     </div>
 </body>
