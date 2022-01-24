@@ -8,18 +8,14 @@ if (!isset($_POST['id'])) {
 
 $id = $_POST['id'];
 
-$delete_user = $mysqlClient->prepare('DELETE from user where id = :id JOIN user_mangsas');
+$delete_user = $mysqlClient->prepare('DELETE from user_mangas WHERE user_id = :id; DELETE from user WHERE id = :id');
 $delete_user->execute(
     [
         'id' => $id,
     ]
 );
 
-if ($delete_user->execute()) {
-    session_start();
-    session_unset();
-    session_destroy();
-    echo '<script language="javascript">';
-    echo 'alert("Compte supprimer :( "); location.href="../index.php"';
-    echo '</script>';
-}
+session_start();
+session_unset();
+session_destroy();
+header('Location: ../index.php');
