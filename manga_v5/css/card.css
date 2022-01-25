@@ -1,0 +1,38 @@
+#loaded {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: unset;
+}
+
+.dsaquel-row  {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    justify-content: stretch;
+}
+
+.dsaquel-row > * {
+    flex-basis: 20rem;
+    flex-shrink: 0;
+}
+
+.dsaquel-row .card {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.dsaquel-row .card > .card-content {
+    flex-grow: 1;
+}
+
+.dsaquel-row .card > .card-image {
+    flex-basis: 25rem;
+    flex-shrink: 0;
+    overflow-y: hidden;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
