@@ -17,4 +17,3 @@ if (isset($_POST['pseudoOrEmail']) &&  isset($_POST['password'])) {
     }
 }
 ?>
-

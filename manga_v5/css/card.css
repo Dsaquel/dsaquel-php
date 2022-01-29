@@ -1,4 +1,9 @@
-#loaded {
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#mangas {
     flex-wrap: wrap;
     justify-content: center;
     overflow: unset;
@@ -19,20 +24,30 @@
 .dsaquel-row .card {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
 }
 
 .dsaquel-row .card > .card-content {
     flex-grow: 1;
+    border-bottom: 2px solid #333;
+    width: 80%;
+    margin-top: 5px;
 }
 
 .dsaquel-row .card > .card-image {
-    flex-basis: 25rem;
+    margin-top: 1rem;
+    flex-basis: 20rem;
     flex-shrink: 0;
     overflow-y: hidden;
 }
 
-body {
-    margin: 0;
-    overflow-x: hidden;
+.card-action{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 5px;
+}
+
+.card-action > .button{
+    margin-left: 5px;
 }

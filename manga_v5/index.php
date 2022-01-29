@@ -16,8 +16,10 @@
 <body>
     <div class="bloc_page">
 
-        <?php include_once('php/login.php') ?>
-
+        <?php
+        include_once('php/login.php');
+        include('includes/modal.php');
+        ?>
         <?php
         include_once('php/check_user_log.php');
         if (checkUserLog() === true) {
@@ -33,6 +35,7 @@
             <input type="text" id="search" name="search" placeholder="One piece">
         </form>
         <main>
+            <h3 id="genderMangas"></h3>
             <div id="section_index">
             </div>
         </main>

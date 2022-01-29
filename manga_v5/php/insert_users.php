@@ -2,8 +2,6 @@
 
 include_once("../database/log_database.php");
 
-$lastname = $_POST['nom'];
-$firstname = $_POST['prenom'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -23,11 +21,9 @@ $checkUsername->execute(array(
 $num_rows_username = $checkUsername->rowCount();
 
 if ($num_rows_email == 0 && $num_rows_username == 0) {
-    $insertUserQuery = ("INSERT INTO user (firstname, lastname, email, username, password) VALUES (:firstname, :lastname, :email, :username, :password)");
+    $insertUserQuery = ("INSERT INTO user (email, username, password) VALUES (:email, :username, :password)");
     $insertUser = $mysqlClient->prepare($insertUserQuery);
     $insertUser->execute([
-        'firstname' => $firstname,
-        'lastname' => $lastname,
         'email' => $email,
         'password' => $password,
         'username' => $username,

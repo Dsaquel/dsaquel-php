@@ -3,14 +3,6 @@ session_start();
 
 include("../database/log_database.php");
 
-function userMangas($mysqlClient)
-{
-    $sqlQuery = 'SELECT * FROM user_mangas WHERE user_id = 3';
-    $userQuery = $mysqlClient->prepare($sqlQuery);
-    $userQuery->execute();
-    $data = $userQuery->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode(['success' => $data]);
-}
 
 function userAnimes($mysqlClient)
 {

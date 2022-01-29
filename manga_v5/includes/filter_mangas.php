@@ -1,6 +1,6 @@
-<ul>
-    <li onclick="modalError(this)">Ma bibliothèque</li>
-    <li><a onclick="seasonLater(event)">Prochainement</a></li>
+<ul id="filterMangas">
+    <li id="btnDisable">Ma bibliothèque</li>
+    <li><a id="mangasLater" onclick="seasonLater(event)">Prochainement</a></li>
     <li class="dropdown">
         <a class="dropbtn">Genre</a>
         <div class="dropdown-content" id="menus">
@@ -14,15 +14,3 @@
         </div>
     </li>
 </ul>
-
-<div id="modal-error" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close-modal">&times;</span>
-            <h2>Erreur !</h2>
-        </div>
-        <div class="modal-body">
-            <p>Vous devez être connecté pour accéder à cette fonctionnalité.</p>
-        </div>
-    </div>
-</div>

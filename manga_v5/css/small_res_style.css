@@ -2,16 +2,15 @@
     nav i {
         margin-right: 60vh;
     }
+    header {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 1280px) {
     .bloc_page {
         margin: auto;
         width: auto;
-    }
-
-    header {
-        width: 100%;
     }
 
     nav {
@@ -38,9 +37,12 @@
         display: block;
     }
     
-
     #logForm {
         width: auto;
+        z-index: 1;
+    }
+    .login-box__content{
+        position: unset !important;
     }
 
     #btnRegister {
@@ -132,6 +134,13 @@
 
     article:hover {
         transform: none;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    header{
+        display: unset !important;
+        min-height: 300px !important;
     }
 }
 

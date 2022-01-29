@@ -1,17 +1,24 @@
 @import url("modal.css");
 
-body{
-    font-family:arial;
+body {
+    font-family: arial;
+    font-size: 14px;
 }
 
 #registration {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     background-color: #333;
     margin: auto;
     padding: 40px;
-    width: 70%;
-    min-width: 300px;
     max-height: min-content;
     color: #fff;
+}
+
+.getPlacehodler {
+    margin-bottom: 0px;
+    align-self: flex-start;
 }
 
 .login-box__form-input {
@@ -19,75 +26,50 @@ body{
     border: none;
     outline: none;
     background-color: #222;
-    padding: 10px 5px;
-    margin-bottom: 5px;
+    padding: 12px;
+    margin-bottom: 8px;
+    margin-top: 0px;
     font-size: 16px;
     color: #fff;
     width: 205;
 }
 
-
-
-input.invalid {
-    background-color: #ffdddd;
+.login-box__form-input:focus {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.tab {
-    display: none;
-    text-align: center;
+.input-group {
+    display: flex;
+    flex-direction: column;
 }
 
-.step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-}
-
-.uncompleted {
-    background-color: red;
-}
-
-.step.active {
-    opacity: 1;
-}
-
-.step.finish {
-    background-color: #04AA6D;
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input[type=submit] {
+    cursor: pointer;
     background-color: #04AA6D;
+    display: inline-block;
     color: white;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.container {
-    background-color: #f1f1f1;
-    padding: 20px;
-}
-
-#message {
-    display: none;
-    background: #15202b31;
-    color: #fff;
-    position: relative;
-    padding: 20px;
-    margin-top: 10px;
-    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-#message p {
-    padding: 10px 35px;
-    font-size: 18px;
+.invalid {
+    border: 1px solid red;
 }
 
 .valid {
-    color: green;
+    border: 1px solid green;
 }
+
+/* TODO: form valid or invalid dynamic ? doesn't work yet
 
 .valid:before {
     position: relative;
@@ -96,13 +78,14 @@ input[type=submit] {
 }
 
 
-.invalid {
-    color: red;
-}
+
 
 .invalid:before {
     position: relative;
     left: -35px;
     content: "✖";
 }
-
+.uncompleted {
+    background-color: red;
+}
+*/

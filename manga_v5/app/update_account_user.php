@@ -50,16 +50,6 @@ $user = $userQuery->fetchAll(PDO::FETCH_ASSOC);
 
                         <div class="account-edit__input-group">
                             <div class="account-edit-entry">
-                                <input class="account-edit-entry__input" type="text" id="lname" name="lastname" value="<?php echo $user[0]['lastname']; ?>">
-                                <label class="account-edit-entry__label" for="nom">Last name:</label>
-                            </div>
-                            <div class="account-edit-entry">
-                                <input class="account-edit-entry__input" type="text" name="firstname" value="<?php echo $user[0]['firstname']; ?>">
-                                <label class="account-edit-entry__label" for="prenom">First name:</label>
-                            </div>
-                        </div>
-                        <div class="account-edit__input-group">
-                            <div class="account-edit-entry">
                                 <input class="account-edit-entry__input" type="email" name="email" value="<?php echo $user[0]['email']; ?>">
                                 <label class="account-edit-entry__label" for="email">email:</label>
                             </div>
