@@ -1,10 +1,10 @@
 const baseUrlApi = "https://api.jikan.moe/v3";
 let currentUrl = window.location.pathname;
-if (currentUrl == "/manga_v5/index.php") {
-    window.location.replace("/manga_v5/");
+if (currentUrl == "/manga/index.php") {
+    window.location.replace("/manga/");
 }
 function onPageLoaded() {
-    if (currentUrl == "/manga_v5/") {
+    if (currentUrl == "/manga/") {
         getTopAnimes();
         getCurrentFilter();
     } else {
@@ -56,7 +56,7 @@ async function getUserAnime() {
 
 function updateDom(data) {
     const section = document.getElementById("section_index");
-    if (currentUrl == "/manga_v5/") {
+    if (currentUrl == "/manga/") {
         const animesHTML = data.map((anime) => {
             return `
             <div class="card article">
@@ -123,7 +123,6 @@ function displayLoginForm() {
     }
 }
 
-
 const messageModal = {
     errorConnexion: "Email ou mdp incorrect",
     needConnexion: "Vous devez être connecté pour accéder à cette fonctionnalité.",
@@ -139,7 +138,7 @@ function getCurrentFilter(filter) {
     if (filter === "Prochainement") {
         currentFilter.innerHTML = "Prochainement"
     } else if (filter === undefined) {
-        currentFilter.innerHTML = "Top manga"
+        currentFilter.innerHTML = "Top anime"
     }
 }
 
