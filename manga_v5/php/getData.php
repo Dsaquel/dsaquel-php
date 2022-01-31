@@ -27,9 +27,9 @@ function userAnimes($mysqlClient)
 
 function getUserStatus(){
     if(isset($_SESSION['LOGGED_USER']['id'])){
-        echo json_encode(['isLogged' => 'true']);
+        echo json_encode(['isLogged' => true]);
     } else {
-        echo json_encode(['isLogged' => 'false']);
+        echo json_encode(['isLogged' => false]);
     }
 }
 
