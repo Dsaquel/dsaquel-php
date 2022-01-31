@@ -1,5 +1,4 @@
 <ul id="filterMangas">
-    <li id="btnDisable">Ma bibliothèque</li>
     <li><a id="mangasLater" onclick="seasonLater(event)">Prochainement</a></li>
     <li class="dropdown">
         <a class="dropbtn">Genre</a>

@@ -1,9 +1,12 @@
 const baseUrlApi = "https://api.jikan.moe/v3";
 let currentUrl = window.location.pathname;
+if (currentUrl == "/manga_v5/index.php") {
+    window.location.replace("/manga_v5/");
+}
 function onPageLoaded() {
-    if (currentUrl == "/manga_v5/index.php") {
+    if (currentUrl == "/manga_v5/") {
         getTopAnimes();
-        getCurrentFilter()
+        getCurrentFilter();
     } else {
         getUserAnime();
     }
@@ -16,6 +19,7 @@ function getTopAnimes() {
 function getAnimes(event) {
     event.preventDefault();
     const searchQuery = document.getElementById("search").value;
+    getCurrentFilter(searchQuery);
     fetchData(`/search/anime?q=${searchQuery}&page=1`, "results");
 }
 
@@ -52,7 +56,7 @@ async function getUserAnime() {
 
 function updateDom(data) {
     const section = document.getElementById("section_index");
-    if (currentUrl == "/manga_v5/index.php") {
+    if (currentUrl == "/manga_v5/") {
         const animesHTML = data.map((anime) => {
             return `
             <div class="card article">
@@ -63,7 +67,7 @@ function updateDom(data) {
                     <span class="card-title">${anime.title}</span>
                 </div>
                 <div class="card-action">
-                    <button class=" button">
+                    <button>
                         <a href="${anime.url}">Voir</a>
                     </button>
                     <form action="php/manga_insert_library.php" method="POST">
@@ -81,6 +85,7 @@ function updateDom(data) {
                 <div id="mangas" class="dsaquel-row">${animesHTML.join("")}</div>
             </section>
         `;
+        getUserStatus();
     } else {
         const mangasUser = document.getElementById('mangas');
         mangasUser.innerHTML += (data).map(anime => {
@@ -108,14 +113,16 @@ function updateDom(data) {
 
 }
 
-function displayLogForm() {
+
+function displayLoginForm() {
     const x = document.getElementById("logForm");
-    if (x.style.visibility === "visible") {
-        x.style.visibility = "hidden ";
-    } else {
+    if (x.style.visibility === "hidden") {
         x.style.visibility = "visible ";
+    } else {
+        x.style.visibility = "hidden ";
     }
 }
+
 
 const messageModal = {
     errorConnexion: "Email ou mdp incorrect",
@@ -124,16 +131,26 @@ const messageModal = {
 }
 function getCurrentFilter(filter) {
     const genders = document.getElementById("menus")
-    let getCurrentGender = document.getElementById("genderMangas")
-    // TODO: DELETE ?
-    // const seasonLater = document.getElementById("mangasLater")
+    let currentFilter = document.getElementById("genderMangas")
     genders.onclick = e => {
-        getCurrentGender.innerHTML = e.target.innerText;
+        currentFilter.innerHTML = e.target.innerText;
     }
-    if(filter === "Prochainement"){
-        getCurrentGender.innerHTML = "Prochainement"
+    currentFilter.innerHTML = filter;
+    if (filter === "Prochainement") {
+        currentFilter.innerHTML = "Prochainement"
     } else if (filter === undefined) {
-        getCurrentGender.innerHTML = "Top manga"
+        currentFilter.innerHTML = "Top manga"
+    }
+}
+
+async function getUserStatus() {
+    const res = await fetch("./php/getData.php?route=getUserStatus");
+    const data = await res.json();
+    const buttons = document.getElementsByClassName("button");
+    if (data.isLogged === false) {
+        for (let button of buttons) {
+            button.className = "button btnDisable";
+        }
     }
 }
 
@@ -170,6 +187,5 @@ function getCurrentFilter(filter) {
 //         display = 'none';
 //     }
 // }
-
 
 window.addEventListener("load", onPageLoaded);

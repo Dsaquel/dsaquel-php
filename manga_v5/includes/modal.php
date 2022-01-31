@@ -1,5 +1,5 @@
 <?php
-function modalError()
+function modal()
 {
     if (!empty($_REQUEST['Message'])) {
         echo sprintf('

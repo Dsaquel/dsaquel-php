@@ -4,14 +4,14 @@
     </a>
     <nav>
         <div class="login-box">
-            <div onclick="displayLogForm(this)" class="displayLoginForm">connexion/inscription</div>
-            <i onclick="displayLogForm(this)" class="fas fa-user"></i>
-            <div id="logForm" class="login-box__content">
+            <div onclick="displayLoginForm(this)" class="displayLoginForm">connexion/inscription</div>
+            <i onclick="displayLoginForm(this)" class="fas fa-user"></i>
+            <div id="logForm" class="login-box__content" style="visibility: hidden;">
                 <form method="POST" action="index.php" accept-charset="UTF-8" class="login-box__section login-box__section--login">
                     <h2 class="login-box__row login-box__row--title">Se connecter pour continuer</h2>
                     <div class="login-box__row login-box__row--inputs">
-                        <input class="login-box__form-input" name="pseudoOrEmail" placeholder="email ou nom d'utilisateur" required="">
-                        <input type="password" class="login-box__form-input" name="password" placeholder="mot de passe" required="">
+                        <input class="login-box__form-input" autocomplete="current-email" name="pseudoOrEmail" placeholder="email ou nom d'utilisateur" required="">
+                        <input type="password" autocomplete="current-password" class="login-box__form-input" name="password" placeholder="mot de passe" required="">
                     </div>
                     <!-- TODO: Delete ? -->
                     <!-- <div class="login-box__row login-box__row--error">

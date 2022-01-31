@@ -1,3 +1,8 @@
+@media screen and (max-width: 1600px) {
+    #section_index{
+        width: auto;
+    }
+}
 @media screen and (max-width: 1480px) {
     nav i {
         margin-right: 60vh;
@@ -35,6 +40,7 @@
 /* user don't logged */
     .displayLoginForm {
         display: block;
+        cursor: pointer;
     }
     
     #logForm {

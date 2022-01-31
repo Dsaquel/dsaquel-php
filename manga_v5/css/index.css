@@ -59,7 +59,6 @@ nav {
 a {
   color: black;
   text-decoration: none;
-  padding-right: 10px;
 }
 
 
@@ -84,6 +83,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 1600px;
+  margin: auto;
 }
 
 
@@ -132,7 +133,7 @@ li {
   cursor: pointer;
 }
 
-#btnDisable {
+.btnDisable {
   pointer-events: none;
   opacity: 0.5;
 }

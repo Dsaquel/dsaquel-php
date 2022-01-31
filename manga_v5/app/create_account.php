@@ -17,16 +17,14 @@
 
         <?php
         include('../includes/modal.php');
-        modalError();
+        modal();
         ?>
 
-
         <form id="registration" action="../php/insert_users.php" method="POST">
-
             <div class="input-group">
                 <div class="message">
                     <p class="getPlacehodler"></p>
-                    <input class="login-box__form-input" id="email" placeholder="email" name="email">
+                    <input class="login-box__form-input" autocomplete="current-email" id="email" placeholder="email" name="email">
                     <div class="message-error"></div>
                 </div>
             </div>
@@ -35,14 +33,12 @@
                 <div class="message">
                     <div>
                         <p class="getPlacehodler"></p>
-                        <input class="login-box__form-input" class="login-box__form-input" placeholder="Mot de passe" type="password" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required >
-                        <i class="far fa-eye"></i>
+                        <input class="login-box__form-input" placeholder="Mot de passe" type="password" autocomplete="current-password" suggested="new-password" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required> <i class="far fa-eye"></i>
                         <div id="pswError" class="message-error"></div>
                     </div>
                     <div>
                         <p class="getPlacehodler"></p>
-                        <input class="login-box__form-input" id="confirm_password" placeholder="Confirmer" name="pword" type="password">
-                        <i class="far fa-eye"></i>
+                        <input class="login-box__form-input" id="confirm_password" autocomplete="current-password" placeholder="Confirmer" name="pword" type="password" suggested="new-password"> <i class="far fa-eye"></i>
                     </div>
                     <div id="confirmPswError" class="message-error"></div>
                 </div>
@@ -54,13 +50,11 @@
                     <input class="login-box__form-input" placeholder="Pseudo" id="username" name="username">
                     <div class="message-error"></div>
                 </div>
-
             </div>
             <input type="submit" value="Terminer">
         </form>
     </div>
     <?php include('../includes/footer.php'); ?>
-    </div>
     <script src="../js/register.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
 </body>
