@@ -1,6 +1,5 @@
 
 .modal {
-    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -68,8 +67,8 @@
 }
 
 .modal-header {
-    padding: 2px 16px;
     background-color: red;
+    padding: 2px 16px;
     color: white;
 }
 

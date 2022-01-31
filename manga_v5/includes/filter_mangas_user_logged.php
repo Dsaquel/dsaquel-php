@@ -1,6 +1,6 @@
 <ul>
     <li><a href="app/library.php">Ma bibliothèque</a></li>
-    <li><a onclick="seasonLater(event)">Prochainement</a></li>
+    <li><a id="mangasLater" onclick="seasonLater(event)">Prochainement</a></li>
     <li class="dropdown">
         <a class="dropbtn">Genre</a>
         <div class="dropdown-content" id="menus">

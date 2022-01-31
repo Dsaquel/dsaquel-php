@@ -1,4 +1,3 @@
-
 .nav-click-popup {
     height: 0;
     margin-top: 5px;
@@ -54,4 +53,19 @@
     text-align: left;
     flex: none;
     position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+    #logForm {
+        width: auto;
+        visibility: visible !important;
+    }
+    .simple-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .simple-menu__header {
+        display: none;
+    }
 }

@@ -9,19 +9,18 @@
     <title>Dsaquel - manga</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/card.css">
-    <link rel="stylesheet" href="css/form_user_logged.css">
     <link rel="stylesheet" href="css/small_res_style.css">
     <link rel="stylesheet" href="css/login-user_index.css">
 </head>
 
 <body>
     <div class="bloc_page">
-
-        <?php include_once('php/login.php') ?>
-
         <?php
-        include_once('php/check_user_log.php');
-        if (checkUserLog() === true) {
+        include_once('php/login.php');
+        include('includes/modal.php');
+        ?>
+        <?php
+        if (isset($_SESSION['LOGGED_USER']['id'])) {
             include_once('includes/header_user_logged.php');
             include_once('includes/filter_mangas_user_logged.php');
         } else {
@@ -30,10 +29,11 @@
         }
         ?>
         <form id="search_form" onsubmit="getAnimes(event)">
-            <label for="search">Recherche ton manga préféré :</label>
+            <label for="search">Recherche ton anime préféré :</label>
             <input type="text" id="search" name="search" placeholder="One piece">
         </form>
         <main>
+            <h3 id="genderMangas"></h3>
             <div id="section_index">
             </div>
         </main>
