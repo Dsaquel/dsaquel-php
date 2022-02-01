@@ -7,6 +7,7 @@ function onPageLoaded() {
     if (currentUrl == "/manga_v6/") {
         getTopAnimes();
         getCurrentFilter();
+        getCurrentPagination();
     } else {
         getUserAnime();
     }
@@ -42,28 +43,10 @@ async function getUserAnime() {
 }
 
 function getCurrentPagination() {
-    let getCurrentActive = document.querySelector(".active")
     const paginaton = document.getElementById("pagination");
     paginaton.childNodes.forEach(child => {
         child.addEventListener("click", function () {
-            getCurrentActive.className = ""
             getTopAnimes(child.textContent);
-            child.className = "active"
-            
-            // if (child.textContent === "«") {
-            //     if (previousElementActive.previousElementSibling.textContent !== "«") {
-            //         getTopAnimes(previousElementActive.previousElementSibling.textContent);
-            //         previousElementActive.className = "";
-            //         previousElementActive.previousElementSibling.className = "active";
-            //     }
-            // }
-            // if (child.textContent === "»") {
-            //     if (previousElementActive.nextElementSibling.textContent !== "»") {
-            //         getTopAnimes(previousElementActive.nextElementSibling.textContent);
-            //         previousElementActive.className = "";
-            //         previousElementActive.nextElementSibling.className = "active";
-            //     }
-            // }
         })
     });
 }
@@ -117,7 +100,6 @@ function updateDom(data) {
             </section>
         `;
         getUserStatus();
-        getCurrentPagination();
     } else {
         const mangasUser = document.getElementById('mangas');
         mangasUser.innerHTML += (data).map(anime => {
