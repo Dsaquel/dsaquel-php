@@ -18,16 +18,25 @@ function getAnimes(event) {
     event.preventDefault();
     const searchQuery = document.getElementById("search").value;
     getCurrentFilter(searchQuery);
-    fetchData(`/search/anime?q=${searchQuery}&page=1`, "results");
+    fetchData(`/anime?q=${searchQuery}&order_by=title&letter=${searchQuery}&sfw`, "data");
 }
 
-function filterGenre(num) {
-    fetchData(`/genre/anime/${num}/1`, "anime");
+function filterGenre(num, page) {
+    if(page === undefined){
+        page = '1';
+    }
+    fetchData(`/anime?genres=${num}?&order_by=score&sort=desc&sfw&page=${page}`, "data");
 }
 
-function seasonLater() {
-    fetchData("/season/later", "anime");
-    getCurrentFilter(event.target.innerHTML)
+function seasonLater(num) {
+    if (num === undefined) {
+        num = 1;
+    }
+    let seasonLater = event.target.innerHTML;
+    if(seasonLater === "Prochainement"){
+        getCurrentFilter(seasonLater);
+    }
+    fetchData(`/seasons/upcoming?page=${parseInt(num)}`, "data");
 }
 
 async function getUserAnime() {
@@ -37,16 +46,47 @@ async function getUserAnime() {
         let obj = data.sucess[i];
         for (let key in obj) {
             let manga = obj[key];
-            fetchData(`/anime/${parseInt(manga)}`);
+            fetchData(`/anime/${parseInt(manga)}`, "data");
         }
     }
 }
+//prends la function actuelle
+// ?
 
+//pagigne sur la function actuelle
 function getCurrentPagination() {
+    let currentFilter = document.getElementById("genderMangas");
     const paginaton = document.getElementById("pagination");
     paginaton.childNodes.forEach(child => {
         child.addEventListener("click", function () {
-            getTopAnimes(child.textContent);
+            if(currentFilter.innerHTML === "Prochainement"){
+                seasonLater(child.textContent);
+            }
+            if(currentFilter.innerHTML === "Top anime"){
+                getTopAnimes(child.textContent);
+            }
+            if(currentFilter.innerHTML === "Action"){
+                console.log("toot")
+                filterGenre(1 ,child.textContent);
+            }
+            if(currentFilter.innerHTML === "Aventure"){
+                filterGenre(2 ,child.textContent);
+            }
+            if(currentFilter.innerHTML === "Fantasy"){
+                filterGenre(10 ,child.textContent);
+            }
+            if(currentFilter.innerHTML === "Supernatural"){
+                filterGenre(37 ,child.textContent);
+            }
+            if(currentFilter.innerHTML === "Suspense"){
+                filterGenre(41 ,child.textContent);
+            }
+            if(currentFilter.innerHTML === "Romance"){
+                filterGenre(22,child.textContent);
+            }
+            if(currentFilter.innerHTML === "Sports"){
+                filterGenre(30 ,child.textContent);
+            }
         })
     });
 }
@@ -102,11 +142,11 @@ function updateDom(data) {
         getUserStatus();
     } else {
         const mangasUser = document.getElementById('mangas');
-        mangasUser.innerHTML += (data).map(anime => {
+        mangasUser.innerHTML += [data].map(anime => {
             return `
                 <div class="card article">
                     <div class="card-image">
-                        <img src="${anime.image_url}">
+                        <img src="${anime.images.webp.image_url}">
                     </div>
                 <div class="card-content">
                     <span class="card-title">${anime.title}</span>
@@ -137,23 +177,20 @@ function displayLoginForm() {
     }
 }
 
-const messageModal = {
-    errorConnexion: "Email ou mdp incorrect",
-    needConnexion: "Vous devez être connecté pour accéder à cette fonctionnalité.",
-    sucessConnexion: "Bienvenue sur mon site !!",
-}
+
 function getCurrentFilter(filter) {
-    const genders = document.getElementById("menus")
-    let currentFilter = document.getElementById("genderMangas")
+    const genders = document.getElementById("menus");
+    let currentFilter = document.getElementById("genderMangas");
     genders.onclick = e => {
         currentFilter.innerHTML = e.target.innerText;
     }
     currentFilter.innerHTML = filter;
     if (filter === "Prochainement") {
-        currentFilter.innerHTML = "Prochainement"
+        currentFilter.innerHTML = "Prochainement";
     } else if (filter === undefined) {
-        currentFilter.innerHTML = "Top anime"
+        currentFilter.innerHTML = "Top anime";
     }
+
 }
 
 async function getUserStatus() {

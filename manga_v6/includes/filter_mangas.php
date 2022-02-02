@@ -1,5 +1,5 @@
 <ul id="filterMangas">
-    <li><a id="mangasLater" onclick="seasonLater(event)">Prochainement</a></li>
+    <li><a id="mangasLater" onclick="seasonLater()">Prochainement</a></li>
     <li class="dropdown">
         <a class="dropbtn">Genre</a>
         <div class="dropdown-content" id="menus">
