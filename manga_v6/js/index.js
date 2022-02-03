@@ -142,6 +142,9 @@ function updateDom(data) {
     } else {
         const mangasUser = document.getElementById('mangas');
         mangasUser.innerHTML += [data].map(anime => {
+            if(anime.score === null){
+                anime.score = "?";
+            }
             return `
                 <div class="card article">
                     <div class="card-image">

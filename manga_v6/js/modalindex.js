@@ -5,7 +5,7 @@ const parameter = url.searchParams.get("login");
 
 if ({ login: parameter }.login == "true") {
     const modalLoginValid = new MyCustomModalWindow({
-        show: true, // Show the modal on creation
+        show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close
         headerColor: '#5cb85c',
         headerText: 'Bienvenue',
@@ -15,7 +15,9 @@ if ({ login: parameter }.login == "true") {
             console.log('Another close hook...')
         }
     })
+    modalLoginValid.setVisible(true);
 }
+
 if ({ login: parameter }.login == "false") {
     const modalLoginError = new MyCustomModalWindow({
         show: true, // Show the modal on creation
@@ -28,4 +30,5 @@ if ({ login: parameter }.login == "false") {
             console.log('Another close hook...')
         }
     })
+    modalLoginError.setVisible(true)
 }

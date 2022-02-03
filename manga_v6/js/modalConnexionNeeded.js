@@ -3,7 +3,7 @@ import { ModalWindow, MyCustomModalWindow } from "./modal.js";
 const url_string = window.location.href;
 const url = new URL(url_string);
 const parameter = url.searchParams.get("login");
-if ({ login: parameter }.login === null) {
+if ({ login: parameter }.login === null || { login: parameter }.login == "false") {
     if (document.querySelector('#showInformation')) {
         document.querySelector('#showInformation').addEventListener('click', (e) => {
             const modalLibraryAddingAnime = new MyCustomModalWindow({
