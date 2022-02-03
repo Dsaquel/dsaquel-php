@@ -28,7 +28,7 @@ const inputs = document.querySelectorAll("input").forEach(input => {
         if (input.value.length > 1 && input !== password && input !== confirmPassword) {
             input.className = "login-box__form-input valid";
             input.nextElementSibling.innerHTML = "";
-        } else if(input !== password && input !== confirmPassword){
+        } else if (input !== password && input !== confirmPassword) {
             input.className = "login-box__form-input invalid";
             input.nextElementSibling.innerHTML = "Pas vide !";
         }
@@ -75,14 +75,3 @@ const inputs = document.querySelectorAll("input").forEach(input => {
         }
     });
 })
-
-const modal = document.getElementById("modal-error");
-const span = document.getElementsByClassName("close-modal")[0];
-span.onclick = function () {
-    modal.style.display = "none";
-}
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}

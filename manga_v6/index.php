@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/small_res_style.css">
     <link rel="stylesheet" href="css/login-user_index.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
     <div class="bloc_page">
         <?php
         include_once('php/login.php');
-        include('includes/modal.php');
         ?>
+        
+        <?php include_once('includes/modal.php') ?>
+
         <?php
         if (isset($_SESSION['LOGGED_USER']['id'])) {
             include_once('includes/header_user_logged.php');
@@ -26,6 +29,7 @@
         } else {
             include_once('includes/header.php');
             include_once('includes/filter_mangas.php');
+            include_once('includes/messageInformation.php');
         }
         ?>
         <form id="search_form" onsubmit="getAnimes(event)">
@@ -48,6 +52,8 @@
         <?php include_once('includes/footer.php'); ?>
     </div>
     <script src="js/index.js"></script>
+    <script type="module" src="js/modalindex.js"></script>
+    <script type="module" src="js/modalConnexionNeeded.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
 </body>
 

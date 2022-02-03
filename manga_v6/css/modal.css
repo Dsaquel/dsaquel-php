@@ -1,8 +1,7 @@
-
-.modal {
+.md-dialog {
+    display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -12,68 +11,74 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
+.md-dialog.md-dialog-visible {
+    display: block;
+}
+
+.md-dialog .md-dialog-window {
     border: 1px solid #888;
+    background-color: #fefefe;
     width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    color: black;
-    text-align: center;
+    margin: 10% auto;
 }
 
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-.close-modal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+.md-dialog .md-dialog-header {
+    position: relative;
+    width: calc(100% - 0.5em);
+    height: 1.667em;
     font-weight: bold;
+    font-size: 1.33em;
+    line-height: 1.667em;
+    padding: 0.125em 0.25em;
+    background-color: #DDD;
 }
 
-.close-modal:hover,
-.close-modal:focus {
-    color: black;
+.md-dialog .md-dialog-header-close-btn {
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    width: 0.875em;
+    height: 0.875em;
+    line-height: 1em;
+    padding: 0.1em;
+    color: #7F7F7F;
+}
+
+.md-dialog .md-dialog-header-close-btn:before {
+    content: '\2715';
+}
+
+.md-dialog .md-dialog-header-close-btn:hover,
+.md-dialog .md-dialog-header-close-btn:focus {
+    color: #FFF;
     text-decoration: none;
     cursor: pointer;
+    background: #F00;
 }
 
-.modal-header {
-    background-color: red;
-    padding: 2px 16px;
-    color: white;
+.md-dialog .md-dialog-content {
+    width: 100%;
+    padding: 0.25em;
 }
 
-.modal-body {
-    padding: 2px 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+/** Example Dark Theme */
+.md-theme-dark.md-dialog {
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
+
+.md-theme-dark.md-dialog .md-dialog-window {
+    border: 1px solid #666;
+    background-color: #111;
+    color: #EEE;
+}
+
+.md-theme-dark.md-dialog .md-dialog-header {
+    background-color: #000;
+}
+/* TODO: Delete ? */
+/* .md-theme-dark.md-dialog .md-dialog-header-close-btn {};
+.md-theme-dark.md-dialog .md-dialog-header-close-btn:hover .md-theme-dark.md-dialog .md-dialog-header-close-btn:focus {}
+.md-theme-dark.md-dialog .md-dialog-content {} */

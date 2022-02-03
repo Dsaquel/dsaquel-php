@@ -22,7 +22,7 @@ function getAnimes(event) {
 }
 
 function filterGenre(num, page) {
-    if(page === undefined){
+    if (page === undefined) {
         page = '1';
     }
     fetchData(`/anime?genres=${num}?&order_by=score&sort=desc&sfw&page=${page}`, "data");
@@ -33,7 +33,7 @@ function seasonLater(num) {
         num = 1;
     }
     let seasonLater = event.target.innerHTML;
-    if(seasonLater === "Prochainement"){
+    if (seasonLater === "Prochainement") {
         getCurrentFilter(seasonLater);
     }
     fetchData(`/seasons/upcoming?page=${parseInt(num)}`, "data");
@@ -59,33 +59,32 @@ function getCurrentPagination() {
     const paginaton = document.getElementById("pagination");
     paginaton.childNodes.forEach(child => {
         child.addEventListener("click", function () {
-            if(currentFilter.innerHTML === "Prochainement"){
+            if (currentFilter.innerHTML === "Prochainement") {
                 seasonLater(child.textContent);
             }
-            if(currentFilter.innerHTML === "Top anime"){
+            if (currentFilter.innerHTML === "Top anime") {
                 getTopAnimes(child.textContent);
             }
-            if(currentFilter.innerHTML === "Action"){
-                console.log("toot")
-                filterGenre(1 ,child.textContent);
+            if (currentFilter.innerHTML === "Action") {
+                filterGenre(1, child.textContent);
             }
-            if(currentFilter.innerHTML === "Aventure"){
-                filterGenre(2 ,child.textContent);
+            if (currentFilter.innerHTML === "Aventure") {
+                filterGenre(2, child.textContent);
             }
-            if(currentFilter.innerHTML === "Fantasy"){
-                filterGenre(10 ,child.textContent);
+            if (currentFilter.innerHTML === "Fantasy") {
+                filterGenre(10, child.textContent);
             }
-            if(currentFilter.innerHTML === "Supernatural"){
-                filterGenre(37 ,child.textContent);
+            if (currentFilter.innerHTML === "Supernatural") {
+                filterGenre(37, child.textContent);
             }
-            if(currentFilter.innerHTML === "Suspense"){
-                filterGenre(41 ,child.textContent);
+            if (currentFilter.innerHTML === "Suspense") {
+                filterGenre(41, child.textContent);
             }
-            if(currentFilter.innerHTML === "Romance"){
-                filterGenre(22,child.textContent);
+            if (currentFilter.innerHTML === "Romance") {
+                filterGenre(22, child.textContent);
             }
-            if(currentFilter.innerHTML === "Sports"){
-                filterGenre(30 ,child.textContent);
+            if (currentFilter.innerHTML === "Sports") {
+                filterGenre(30, child.textContent);
             }
         })
     });
@@ -166,8 +165,6 @@ function updateDom(data) {
     }
 
 }
-
-
 function displayLoginForm() {
     const x = document.getElementById("logForm");
     if (x.style.visibility === "hidden") {
@@ -176,7 +173,6 @@ function displayLoginForm() {
         x.style.visibility = "hidden ";
     }
 }
-
 
 function getCurrentFilter(filter) {
     const genders = document.getElementById("menus");
@@ -204,38 +200,5 @@ async function getUserStatus() {
     }
 }
 
-
-// TODO: delete ?
-// const messageModal = {
-//     errorConnexion: "Email ou mdp incorrect",
-//     needConnexion:"Vous devez être connecté pour accéder à cette fonctionnalité.",
-//     sucessConnexion: "Bienvenue sur mon site !!",
-// }
-
-// TODO: return modal if user logged or entry data user incorrect
-// function modal(prop, message) {
-//     let valid = false;
-//     let error = false;
-//     const modal = document.getElementById("modal-error");
-//     const span = document.getElementsByClassName("close-modal")[0];
-//     const color = document.getElementById("modal-header");
-//     const messageContent = document.getElementById("error-message");
-//     let display = modal.style.display;
-//     let backgroundColor = color.style.backgroundColor
-//     let textContent = messageModal
-//     if (prop) {
-//         display = "block";
-//         backgroundColor = "green";
-//         textContent = messageModal.message
-//     }
-//     window.onclick = function (event) {
-//         if (event.target == modal) {
-//             display = 'none';
-//         }
-//     }
-//     span.onclick = function () {
-//         display = 'none';
-//     }
-// }
 
 window.addEventListener("load", onPageLoaded);

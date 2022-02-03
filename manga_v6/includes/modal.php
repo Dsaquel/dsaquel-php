@@ -1,20 +1,9 @@
-<?php
-function modal()
-{
-    if (!empty($_REQUEST['Message'])) {
-        echo sprintf('
-            <div id="modal-error" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close-modal">&times;</span>
-                        <h2>Erreur !</h2>
-                    </div>
-                    <div class="modal-body">
-                        <p>%s</p>
-                    </div>
-                </div>
-
-            </div>', $_REQUEST['Message']);
-    }
-}
-?>
+<div class="md-dialog">
+    <div class="md-dialog-window">
+        <div class="md-dialog-header">
+            <div class="md-dialog-header-close-btn"></div>
+            <div class="md-dialog-header-text">$header</div>
+        </div>
+        <div class="md-dialog-content">$content</div>
+    </div>
+</div>

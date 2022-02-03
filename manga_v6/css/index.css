@@ -198,4 +198,15 @@ li.dropdown {
   color: white;
 }
 
-#pagination a:hover:not(.active) {background-color: #ddd;}
+#showInformation{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  width: 70px;
+  margin-right: 5px;
+}
+
+#pagination a:hover:not(.active) {
+  background-color: #ddd;
+}

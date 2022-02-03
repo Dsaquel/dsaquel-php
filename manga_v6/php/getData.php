@@ -25,8 +25,9 @@ function userAnimes($mysqlClient)
     echo json_encode(['sucess' => $mangas]);
 }
 
-function getUserStatus(){
-    if(isset($_SESSION['LOGGED_USER']['id'])){
+function getUserStatus()
+{
+    if (isset($_SESSION['LOGGED_USER']['id'])) {
         echo json_encode(['isLogged' => true]);
     } else {
         echo json_encode(['isLogged' => false]);
@@ -43,3 +44,4 @@ if (isset($_GET["route"])) {
 } else {
     echo json_encode(['error' => "params route not found"]);
 }
+?>

@@ -14,6 +14,9 @@ if (isset($_POST['pseudoOrEmail']) &&  isset($_POST['password'])) {
             'username' => $result['username'],
             'id' => $result['id'],
         ];
+        header('Location: http://localhost/manga_v6/?login=true');
+    } else {
+        header('Location: http://localhost/manga_v6/?login=false');
     }
 }
 ?>

@@ -16,10 +16,10 @@
         </a>
 
         <?php
-        include('../includes/modal.php');
-        modal();
+        if (!empty($_REQUEST['Message'])) {
+            include('../includes/modal.php');
+        }
         ?>
-
         <form id="registration" action="../php/insert_users.php" method="POST">
             <div class="input-group">
                 <div class="message">
@@ -56,6 +56,7 @@
     </div>
     <?php include('../includes/footer.php'); ?>
     <script src="../js/register.js"></script>
+    <script type="module" src="../js/modalRegister.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
 </body>
 
