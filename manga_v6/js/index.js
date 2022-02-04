@@ -202,6 +202,4 @@ async function getUserStatus() {
         }
     }
 }
-
-
 window.addEventListener("load", onPageLoaded);

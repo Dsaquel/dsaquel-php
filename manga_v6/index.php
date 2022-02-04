@@ -12,15 +12,14 @@
     <link rel="stylesheet" href="css/small_res_style.css">
     <link rel="stylesheet" href="css/login-user_index.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/form_create_acc.css">
 </head>
 
 <body>
     <div class="bloc_page">
         <?php
         include_once('php/login.php');
-        ?>
-        
-        <?php include_once('includes/modal.php') ?>
+        include_once('includes/modal.php') ?>
 
         <?php
         if (isset($_SESSION['LOGGED_USER']['id'])) {
@@ -30,8 +29,7 @@
             include_once('includes/header.php');
             include_once('includes/filter_mangas.php');
             include_once('includes/messageInformation.php');
-        }
-        ?>
+        }?>
         <form id="search_form" onsubmit="getAnimes(event)">
             <label for="search">Recherche ton anime préféré :</label>
             <input type="text" id="search" name="search" placeholder="One piece">
@@ -52,6 +50,7 @@
         <?php include_once('includes/footer.php'); ?>
     </div>
     <script src="js/index.js"></script>
+    <script src="js/register.js"></script>
     <script type="module" src="js/modalindex.js"></script>
     <script type="module" src="js/modalConnexionNeeded.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>

@@ -50,7 +50,7 @@
                     </div>
                     <div class="login-box__row login-box__row--actions">
                         <div class="login-box__action">
-                            <a href="app/create_account.php" class="btn-osu-big btn-osu-big--nav-popup">
+                            <a href="?register=true" class="btn-osu-big btn-osu-big--nav-popup">
                                 <div class="btn-osu-big__content">
                                     <span class="btn-osu-big__left">
                                         S'inscrire

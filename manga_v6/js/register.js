@@ -5,7 +5,6 @@ this.onkeyup = e => {
         e.target.previousElementSibling.innerHTML = e.target.placeholder;
     }
 }
-
 const icons = document.querySelectorAll("i.far").forEach(icon => {
     icon.onclick = f => {
         const type = f.target.previousElementSibling.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -13,7 +12,7 @@ const icons = document.querySelectorAll("i.far").forEach(icon => {
         f.target.classList.toggle("fa-eye-slash");
     }
 });
-
+console.log(icons)
 const inputs = document.querySelectorAll("input").forEach(input => {
     input.addEventListener("blur", function () {
         const email = document.getElementById('email');
@@ -21,8 +20,6 @@ const inputs = document.querySelectorAll("input").forEach(input => {
         const passwordMessage = document.getElementById("pswError");
         const confirmPassword = document.getElementById("confirm_password");
         const confirmPasswordMessage = document.getElementById("confirmPswError");
-        const errorMessage = document.getElementsByClassName("message-error");
-        console.log(errorMessage)
         const emailFilter = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         const lowerCaseLetters = /[a-z]/g;
         const numbers = /[0-9]/g;

@@ -32,6 +32,4 @@
 
     </div>
     <input type="submit" value="Terminer">
-    <link rel="stylesheet" href="css/form_create_acc.css">
 </form>
-<script src="js/register.js"></script>
