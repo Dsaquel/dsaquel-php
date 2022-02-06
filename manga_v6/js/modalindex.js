@@ -3,6 +3,7 @@ const url_string = window.location.href;
 const url = new URL(url_string);
 const islogged = url.searchParams.get("login");
 const registration = url.searchParams.get("register");
+const accountDesactived = url.searchParams.get("account");
 
 if ({ login: islogged }.login == "true") {
     const modalLoginValid = new MyCustomModalWindow({
@@ -35,7 +36,6 @@ if ({ login: islogged }.login == "false") {
 }
 if ({ register: registration }.register == "true") {
     const res = await fetch("./includes/create_account_user.php");
-    //TODO: Mettre une conditon concernant l'url sinon il y a une erreur
     let modalCreateAccountError = new MyCustomModalWindow({
         show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close
@@ -50,7 +50,7 @@ if ({ register: registration }.register == "true") {
     })
     modalCreateAccountError.setVisible(true);
 }
-if({ register: registration }.register == "false"){
+if ({ register: registration }.register == "false") {
     const registerError = new MyCustomModalWindow({
         show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close
@@ -65,6 +65,37 @@ if({ register: registration }.register == "false"){
     registerError.setVisible(true)
 }
 
+if ({ account: accountDesactived }.account == "desactived") {
+    const res = await fetch("./includes/recup_account.php");
+    let modalCreateAccountError = new MyCustomModalWindow({
+        show: false, // Show the modal on creation
+        mode: null, // Disable modal mode, allow click outside to close
+        headerColor: '#d9534f',
+        headerText: 'Recuperation de compte',
+        htmlContent: await res.text(),
+        theme: 'dark',
+        onClose: (self) => {
+            console.log('Another close hook...')
+        }
+    })
+    modalCreateAccountError.setVisible(true);
+}
+
+if ({ account: accountDesactived }.account == "active") {
+    const res = await fetch("./includes/recup_account.php");
+    let modalCreateAccountError = new MyCustomModalWindow({
+        show: false, // Show the modal on creation
+        mode: null, // Disable modal mode, allow click outside to close
+        headerColor: '#5cb85c',
+        headerText: 'Recuperation de compte',
+        htmlContent: 'compte recuperer avec succès',
+        theme: 'dark',
+        onClose: (self) => {
+            console.log('Another close hook...')
+        }
+    })
+    modalCreateAccountError.setVisible(true);
+}
 
 //modal registration condition
 const icons = document.querySelectorAll("i.far").forEach(icon => {
