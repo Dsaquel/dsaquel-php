@@ -30,6 +30,7 @@ if (isset($userId)) {
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/form_user_logged.css">
+    <link rel="stylesheet" href="../css/small_res_style.css">
     <title><?php echo $_SESSION['LOGGED_USER']['username']; ?> - bibliothèque</title>
 </head>
 
