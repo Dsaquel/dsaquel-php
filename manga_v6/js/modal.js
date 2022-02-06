@@ -19,6 +19,9 @@ class ModalWindow {
         } else if (this.opts.textContent) {
             this.query('.md-dialog-content').textContent = this.opts.textContent
         }
+        if(this.opts.styleContent){
+            this.query('.md-dialog-content').style.display = this.opts.styleContent
+        }
         if (this.opts.theme) {
             this.modal.classList.add(`md-theme-${this.opts.theme}`)
         }

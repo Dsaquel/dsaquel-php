@@ -50,7 +50,6 @@
         <?php include_once('includes/footer.php'); ?>
     </div>
     <script src="js/index.js"></script>
-    <script src="js/register.js"></script>
     <script type="module" src="js/modalindex.js"></script>
     <script type="module" src="js/modalConnexionNeeded.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>

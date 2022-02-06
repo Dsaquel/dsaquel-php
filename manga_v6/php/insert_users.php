@@ -35,17 +35,10 @@ if ($num_rows_email == 0 && $num_rows_username == 0) {
 }
 
 
-$location = '../app/create_account.php';
+$location = '../?register=false';
 
-if($num_rows_email != 0 && $num_rows_username != 0){
-    $Message = urldecode("Email et Pseudo déjà utilisé mdrr");
-    header('Location: ' . $location . '?Message='. $Message);
-}elseif ($num_rows_email != 0) {
-    $Message = urldecode("Email déjà utilisé");
-    header('Location: ' . $location . '?Message='. $Message);
-}elseif ($num_rows_username != 0) {
-    $Message = urldecode("Pseudo déjà prit");
-    header('Location: ' . $location . '?Message='. $Message);
+if($num_rows_email != 0 || $num_rows_username != 0){
+    header('Location:' . $location);
 }
 
 // TODO: delete ?
