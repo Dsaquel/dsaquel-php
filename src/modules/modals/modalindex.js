@@ -26,7 +26,7 @@ if ({ login: islogged }.login == "false") {
         mode: null, // Disable modal mode, allow click outside to close
         headerColor: '#d9534f',
         headerText: 'Erreur !',
-        htmlContent: '<p>Identifiants incorrect</p>',
+        htmlContent: '<p>Identifiants incorrects</p>',
         theme: 'dark',
         onClose: (self) => {
             
@@ -88,7 +88,7 @@ if ({ account: accountDesactived }.account == "active") {
         mode: null, // Disable modal mode, allow click outside to close
         headerColor: '#5cb85c',
         headerText: 'Recuperation de compte',
-        htmlContent: 'compte recuperer avec succès',
+        htmlContent: 'compte recupere avec succès',
         theme: 'dark',
         onClose: (self) => {
             
