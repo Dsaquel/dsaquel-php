@@ -1,15 +1,15 @@
 const baseUrlApi = "https://api.jikan.moe/v4";
 let currentUrl = window.location.pathname;
-if (currentUrl == "/manga/index.php") {
-    window.location.replace("/manga/");
+if (currentUrl == "/src/index.php") {
+    window.location.replace("/src/");
 }
 function onPageLoaded() {
-    if (currentUrl == "/manga/") {
+    if (currentUrl == "/src/app/library_user.php") {
+        getUserAnime();
+    } else {
         getTopAnimes();
         getCurrentFilter();
         getCurrentPagination();
-    } else {
-        getUserAnime();
     }
 }
 
@@ -107,7 +107,33 @@ async function fetchData(source, prop) {
 
 function updateDom(data) {
     const section = document.getElementById("section_index");
-    if (currentUrl == "/manga/") {
+    if (currentUrl == "/src/app/library_user.php")  {
+        const mangasUser = document.getElementById('mangas');
+        mangasUser.innerHTML += [data].map(anime => {
+            if(anime.score === null){
+                anime.score = "?";
+            }
+            return `
+                <div class="card article">
+                    <div class="card-image">
+                        <img src="${anime.images.webp.image_url}">
+                    </div>
+                <div class="card-content">
+                    <span class="card-title">${anime.title}</span>
+                    <p>Score: ${anime.score}/10</p>
+                </div>
+                    <button class="card-action button">
+                        <a href="${anime.url}">Plus de détail</a>
+                    </button>
+                    <form class="" action="../config/delete_manga.php" method="post">
+                        <input type="hidden" name="idManga" value="${anime.mal_id}">
+                        <input type="submit" value="Supprimer">
+                    </form>
+                    
+                </div>
+            `
+        }).join("")
+    } else {
         const animesHTML = data.map((anime) => {
             return `
             <div class="card article">
@@ -137,33 +163,7 @@ function updateDom(data) {
             </section>
         `;
         getUserStatus();
-    } else {
-        const mangasUser = document.getElementById('mangas');
-        mangasUser.innerHTML += [data].map(anime => {
-            if(anime.score === null){
-                anime.score = "?";
-            }
-            return `
-                <div class="card article">
-                    <div class="card-image">
-                        <img src="${anime.images.webp.image_url}">
-                    </div>
-                <div class="card-content">
-                    <span class="card-title">${anime.title}</span>
-                    <p>Score: ${anime.score}/10</p>
-                </div>
-                    <button class="card-action button">
-                        <a href="${anime.url}">Plus de détail</a>
-                    </button>
-                    <form class="" action="../config/delete_manga.php" method="post">
-                        <input type="hidden" name="idManga" value="${anime.mal_id}">
-                        <input type="submit" value="Supprimer">
-                    </form>
-                    
-                </div>
-            `
-        }).join("")
-    }
+    } 
 }
 function displayLoginForm() {
     const x = document.getElementById("logForm");
