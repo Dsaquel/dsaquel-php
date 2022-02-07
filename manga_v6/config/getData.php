@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include("../database/log_database.php");
+include("../db/login_database.php");
 
 
 function userAnimes($mysqlClient)

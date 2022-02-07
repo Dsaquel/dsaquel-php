@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dsaquel - Inscription</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/form_create_acc.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 
 <body>
@@ -17,10 +17,10 @@
 
         <?php
         if (!empty($_REQUEST['Message'])) {
-            include('../includes/modal.php');
+            include('../components/modal.php');
         }
         ?>
-        <form id="registration" action="../php/insert_users.php" method="POST">
+        <form id="registration" action="../config/insert_users.php" method="POST">
             <div class="input-group">
                 <div class="message">
                     <p class="getPlacehodler"></p>
@@ -54,7 +54,7 @@
             <input type="submit" value="Terminer">
         </form>
     </div>
-    <?php include('../includes/footer.php'); ?>
+    <?php include('../components/footer.php'); ?>
     <script src="../js/register.js"></script>
     <script type="module" src="../js/modalRegister.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>

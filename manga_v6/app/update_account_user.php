@@ -1,6 +1,6 @@
 <?php
 
-include_once('../database/log_database.php');
+include_once('../db/login_database.php');
 
 
 $getData = $_GET;
@@ -40,7 +40,7 @@ $user = $userQuery->fetchAll(PDO::FETCH_ASSOC);
                     <h2 class="account-edit__section-title">Profil</h2>
                 </div>
                 <div class="account-edit__input-groups">
-                    <form method="POST" action="../php/update_user.php">
+                    <form method="POST" action="../config/update_user.php">
                         <div class="account-edit__input-group">
                             <div class="account-edit-entry">
                                 <input class="account-edit-entry__input" type="text" name="username" value="<?php echo $user[0]['username']; ?>">
@@ -68,7 +68,7 @@ $user = $userQuery->fetchAll(PDO::FETCH_ASSOC);
 
                     </form>
 
-                    <form class="deleteUser" action="../php/delete_user.php" method="post">
+                    <form class="deleteUser" action="../config/delete_user.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $user[0]['id']; ?>">
                         <input type="submit" value="Supprimer">
                     </form>

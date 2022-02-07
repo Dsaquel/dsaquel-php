@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once('../database/log_database.php');
+include_once('../db/login_database.php');
 $userId = $_SESSION['LOGGED_USER']['id'];
 if (isset($userId)) {
     $sqlQuery = '
@@ -29,7 +29,6 @@ if (isset($userId)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/card.css">
-    <link rel="stylesheet" href="../css/form_user_logged.css">
     <link rel="stylesheet" href="../css/small_res_style.css">
     <title><?php echo $_SESSION['LOGGED_USER']['username']; ?> - bibliothèque</title>
 </head>

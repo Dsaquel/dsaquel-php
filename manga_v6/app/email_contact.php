@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/email_contact.css">
+    <link rel="stylesheet" href="../css/app_email_contact.css">
     <title>Dsaquel - feedback</title>
 </head>
 
@@ -15,7 +15,7 @@
             <div class="changeImg"></div>
         </a>
         <h2 class="form-message">Laisse moi un message !</h2>
-            <form action="../php/check_email_sending.php" method="POST">
+            <form action="../config/check_email_sending.php" method="POST">
                 <div class="grid">
                     <input class="champs" type="text" name="mailUser" placeholder="Votre email">
 

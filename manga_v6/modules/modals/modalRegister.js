@@ -9,7 +9,7 @@ let modalCreateAccountError = new MyCustomModalWindow({
     htmlContent: formInscription,
     theme: 'dark',
     onClose: (self) => {
-        console.log('Another close hook...')
+        
     }
 })
 

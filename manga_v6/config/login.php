@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['pseudoOrEmail']) &&  isset($_POST['password'])) {
-    include("database/log_database.php");
+    include("db/login_database.php");
     $query = 'SELECT * FROM user WHERE email = :email OR username = :username';
     $queryPrepared = $mysqlClient->prepare($query);
     $queryPrepared->execute([

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('../database/log_database.php');
+include_once('../db/login_database.php');
 $manga = $_POST['mangaId'];
 $userId = $_SESSION['LOGGED_USER']['id'];
 
@@ -11,7 +11,7 @@ if (isset($userId) && isset($manga)) {
         'manga' => $manga,
         'userId' => $userId,
     ]);
-    header('Location: ../app/library.php');
+    header('Location: ../app/library_user.php');
 
 } else {
     header('location: ../index.php');
@@ -20,7 +20,7 @@ if (isset($userId) && isset($manga)) {
 
 
 
-
+<!-- TODO: Delete ? -->
 <!-- check if manga insert before return error-->
 <!-- if ($num_rows_manga == 0) {} -->
 <!-- $checkManga = $mysqlClient->prepare('SELECT manga_id FROM user_mangas WHERE manga_id=:manga');

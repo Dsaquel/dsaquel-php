@@ -10,25 +10,25 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/small_res_style.css">
-    <link rel="stylesheet" href="css/login-user_index.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/form_create_acc.css">
+    <link rel="stylesheet" href="css/login_popup.css">
+    <link rel="stylesheet" href="css/modal_component.css">
+    <link rel="stylesheet" href="css/registration.css">
 </head>
 
 <body>
     <div class="bloc_page">
         <?php
-        include_once('php/login.php');
-        include_once('includes/modal.php') ?>
+        include_once('config/login.php');
+        include_once('components/modal.php') ?>
 
         <?php
         if (isset($_SESSION['LOGGED_USER']['id'])) {
-            include_once('includes/header_user_logged.php');
-            include_once('includes/filter_mangas_user_logged.php');
+            include_once('components/header_user_logged.php');
+            include_once('components/filter_mangas_user_logged.php');
         } else {
-            include_once('includes/header.php');
-            include_once('includes/filter_mangas.php');
-            include_once('includes/messageInformation.php');
+            include_once('components/header.php');
+            include_once('components/filter_mangas.php');
+            include_once('components/messageInformation.php');
         }?>
         <form id="search_form" onsubmit="getAnimes(event)">
             <label for="search">Recherche ton anime préféré :</label>
@@ -47,11 +47,11 @@
             <a href="#">5</a>
             <a href="#">6</a>
         </div>
-        <?php include_once('includes/footer.php'); ?>
+        <?php include_once('components/footer.php'); ?>
     </div>
     <script src="js/index.js"></script>
-    <script type="module" src="js/modalindex.js"></script>
-    <script type="module" src="js/modalConnexionNeeded.js"></script>
+    <script type="module" src="modules/modals/modalindex.js"></script>
+    <script type="module" src="modules/modals/modalConnexionNeeded.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
 </body>
 

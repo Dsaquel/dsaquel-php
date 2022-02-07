@@ -24,7 +24,7 @@
                     Paramètres
                 </a>
 
-                <a href="php/disconnecting.php" class="simple-menu__item">
+                <a href="config/disconnecting.php" class="simple-menu__item">
                     Se déconnecter
                 </a>
             </div>
@@ -32,4 +32,4 @@
     </nav>
 </header>
 
-<link rel="stylesheet" href="./css/form_user_logged.css">
+<link rel="stylesheet" href="./css/user_popup.css">

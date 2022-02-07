@@ -1,6 +1,6 @@
 <?php
 
-include_once('../database/log_database.php');
+include_once('../db/login_database.php');
 
 if (isset($_POST['idManga'])) {
     $idManga = $_POST['idManga'];
@@ -14,7 +14,7 @@ if (isset($_POST['idManga'])) {
 
     if ($delete_manga->execute()) {
         echo '<script language="javascript">';
-        echo 'alert("Manga suprimé bg "); location.href="../app/library.php"';
+        echo 'alert("Manga suprimé bg "); location.href="../app/library_user.php"';
         echo '</script>';
     }
 }

@@ -14,7 +14,7 @@ if ({ login: islogged }.login == "true") {
         htmlContent: '<p>Connecté</p>',
         theme: 'dark',
         onClose: (self) => {
-            console.log('Another close hook...')
+            
         }
     })
     modalLoginValid.setVisible(true);
@@ -29,13 +29,13 @@ if ({ login: islogged }.login == "false") {
         htmlContent: '<p>Identifiants incorrect</p>',
         theme: 'dark',
         onClose: (self) => {
-            console.log('Another close hook...')
+            
         }
     })
     modalLoginError.setVisible(true)
 }
 if ({ register: registration }.register == "true") {
-    const res = await fetch("./includes/create_account_user.php");
+    const res = await fetch("./components/create_account_user.php");
     let modalCreateAccountError = new MyCustomModalWindow({
         show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close
@@ -45,7 +45,7 @@ if ({ register: registration }.register == "true") {
         theme: 'dark',
         styleContent: 'flex',
         onClose: (self) => {
-            console.log('Another close hook...')
+            
         }
     })
     modalCreateAccountError.setVisible(true);
@@ -59,14 +59,14 @@ if ({ register: registration }.register == "false") {
         htmlContent: '<p>Identifiants déjà prit</p>',
         theme: 'dark',
         onClose: (self) => {
-            console.log('Another close hook...')
+            
         }
     })
     registerError.setVisible(true)
 }
 
 if ({ account: accountDesactived }.account == "desactived") {
-    const res = await fetch("./includes/recup_account.php");
+    const res = await fetch("./components/recup_account.php");
     let modalCreateAccountError = new MyCustomModalWindow({
         show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close
@@ -75,14 +75,14 @@ if ({ account: accountDesactived }.account == "desactived") {
         htmlContent: await res.text(),
         theme: 'dark',
         onClose: (self) => {
-            console.log('Another close hook...')
+            
         }
     })
     modalCreateAccountError.setVisible(true);
 }
 
 if ({ account: accountDesactived }.account == "active") {
-    const res = await fetch("./includes/recup_account.php");
+    const res = await fetch("./components/recup_account.php");
     let modalCreateAccountError = new MyCustomModalWindow({
         show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close
@@ -91,7 +91,7 @@ if ({ account: accountDesactived }.account == "active") {
         htmlContent: 'compte recuperer avec succès',
         theme: 'dark',
         onClose: (self) => {
-            console.log('Another close hook...')
+            
         }
     })
     modalCreateAccountError.setVisible(true);

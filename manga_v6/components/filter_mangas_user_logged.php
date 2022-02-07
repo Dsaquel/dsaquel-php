@@ -1,5 +1,5 @@
 <ul>
-    <li><a href="app/library.php">Ma bibliothèque</a></li>
+    <li><a href="app/library_user.php">Ma bibliothèque</a></li>
     <li><a id="mangasLater" onclick="seasonLater()">Prochainement</a></li>
     <li class="dropdown">
         <a class="dropbtn">Genre</a>

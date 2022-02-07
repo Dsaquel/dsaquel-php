@@ -1,6 +1,6 @@
 <?php
 
-include_once('../database/log_database.php');
+include_once('../db/login_database.php');
 
 if (isset($_POST['id'])) {    
     $id = $_POST['id'];

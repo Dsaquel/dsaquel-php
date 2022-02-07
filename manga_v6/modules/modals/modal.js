@@ -75,9 +75,9 @@ class MyCustomModalWindow extends ModalWindow {
         super(options)
     }
     onOpen() {
-        console.log('Opened!') // or you can use options.onOpen
+        
     }
     onClose() {
-        console.log('Closed!') // or you can use options.onClose
+        
     }
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../database/log_database.php");
+include_once("../db/login_database.php");
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -28,7 +28,7 @@ if (isset($email) && isset($password) && $num_rows_email === 0 && $num_rows_user
     $result = $checkUserDelete->fetch();
 
     if($result['desactivate_user'] === "1") {
-        setcookie('id', $result['id'], time()+3400);
+        setcookie('id', $result['id'], time()+600);
         header('Location: ../?account=desactived');
     }
 }

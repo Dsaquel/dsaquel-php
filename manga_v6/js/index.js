@@ -40,7 +40,7 @@ function seasonLater(num) {
 }
 
 async function getUserAnime() {
-    const res = await fetch("../php/getData.php?route=userAnimes");
+    const res = await fetch("../config/getData.php?route=userAnimes");
     const data = await res.json();
     for (let i = 0; i < data.sucess.length; i++) {
         let obj = data.sucess[i];
@@ -121,7 +121,7 @@ function updateDom(data) {
                     <button>
                         <a href="${anime.url}">Voir</a> 
                     </button>
-                    <form action="php/manga_insert_library.php" method="POST">
+                    <form action="config/manga_insert_library.php" method="POST">
                         <input type="text" style="display:none" name="mangaId" value="${anime.mal_id}">
                         <button type="submit" class="button" value="submit">Ajouter à la bibliothèque</button>
                     </form>
@@ -155,7 +155,7 @@ function updateDom(data) {
                     <button class="card-action button">
                         <a href="${anime.url}">Plus de détail</a>
                     </button>
-                    <form class="" action="../php/delete_manga.php" method="post">
+                    <form class="" action="../config/delete_manga.php" method="post">
                         <input type="hidden" name="idManga" value="${anime.mal_id}">
                         <input type="submit" value="Supprimer">
                     </form>
@@ -190,7 +190,7 @@ function getCurrentFilter(filter) {
 }
 
 async function getUserStatus() {
-    const res = await fetch("./php/getData.php?route=getUserStatus");
+    const res = await fetch("./config/getData.php?route=getUserStatus");
     const data = await res.json();
     const buttons = document.getElementsByClassName("button");
     if (data.isLogged === false) {

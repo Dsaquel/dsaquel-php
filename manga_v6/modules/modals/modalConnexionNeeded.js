@@ -14,7 +14,7 @@ if ({ login: parameter }.login === null || { login: parameter }.login == "false"
                 htmlContent: '<p>Connecte toi pour pouvoir ajouter des animes a ta bibliotheque</p>',
                 theme: 'dark',
                 onClose: (self) => {
-                    console.log('Another close hook...')
+                    
                 }
             })
             modalLibraryAddingAnime.setVisible(true);
