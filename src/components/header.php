@@ -32,7 +32,7 @@
                             </button>
                             <button id="btnRegister" class="btn-osu-big btn-osu-big--nav-popup">
                                 <div class="btn-osu-big__content">
-                                    <a href="app/create_account.php" class="btn-osu-big__left">
+                                    <a href="?register=true" class="btn-osu-big__left">
                                         s'inscrire
                                     </a>
                                     <span class="fas fa-sign-in-alt"></span>

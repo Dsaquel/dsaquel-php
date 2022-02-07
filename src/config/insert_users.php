@@ -51,7 +51,6 @@ if ($num_rows_email == 0 && $num_rows_username == 0) {
 $location = '../?register=false';
 
 if ($num_rows_email != 0 || $num_rows_username != 0) {
-    echo "toto";
     header('Location:' . $location);
 }
 

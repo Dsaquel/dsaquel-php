@@ -11,7 +11,7 @@ if ({ login: parameter }.login === null || { login: parameter }.login == "false"
                 mode: null, // Disable modal mode, allow click outside to close
                 headerColor: '#f0ad4e',
                 headerText: 'Information',
-                htmlContent: '<p>Connecte toi pour pouvoir ajouter des animes a ta bibliotheque</p>',
+                htmlContent: '<p>Connecte toi pour pouvoir ajouter des animes à ta bibliotheque</p>',
                 theme: 'dark',
                 onClose: (self) => {
                     

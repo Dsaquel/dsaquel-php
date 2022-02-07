@@ -207,6 +207,7 @@ li.dropdown {
   height: 100px;
   width: 70px;
   margin-right: 5px;
+  margin-bottom: 45px;
 }
 
 #pagination a:hover:not(.active) {
