@@ -3,7 +3,6 @@ session_start();
 include_once("../db/login_database.php");
 
 $email = $_POST['email'];
-$password = $_POST['password'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $username = $_POST['username'];
 

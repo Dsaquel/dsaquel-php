@@ -13,7 +13,7 @@ if (
 
 $id = $postData['id_update'];
 $email = $postData['email'];
-$password = $postData['password'];
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $username = $postData['username'];
 
 $updateUserQuery = $mysqlClient->prepare('UPDATE user SET email = :email, password = :password, username = :username where id = :id');
