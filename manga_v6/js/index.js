@@ -50,8 +50,6 @@ async function getUserAnime() {
         }
     }
 }
-//prends la function actuelle
-// ?
 
 //pagigne sur la function actuelle
 function getCurrentPagination() {
@@ -166,7 +164,6 @@ function updateDom(data) {
             `
         }).join("")
     }
-
 }
 function displayLoginForm() {
     const x = document.getElementById("logForm");
