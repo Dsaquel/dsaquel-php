@@ -2,7 +2,7 @@ function compte_a_rebours() {
     const compte_a_rebours = document.getElementById("compte_a_rebours");
 
     const date_actuelle = new Date();
-    const date_evenement = new Date("February 08 00:00:00 2022");
+    const date_evenement = new Date("February 22 00:00:00 2022");
     const total_secondes = (date_evenement - date_actuelle) / 1000;
 
     const prefixe = "Mise à jour du site dans ";

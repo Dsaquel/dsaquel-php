@@ -1,10 +1,10 @@
 const baseUrlApi = "https://api.jikan.moe/v4";
 let currentUrl = window.location.pathname;
-if (currentUrl == "/src/index.php") {
-    window.location.replace("/src/");
+if (currentUrl == "/manga/index.php") {
+    window.location.replace("/manga/");
 }
 function onPageLoaded() {
-    if (currentUrl == "/src/app/library_user.php") {
+    if (currentUrl == "/manga/app/library_user.php") {
         getUserAnime();
     } else {
         getTopAnimes();
@@ -107,7 +107,7 @@ async function fetchData(source, prop) {
 
 function updateDom(data) {
     const section = document.getElementById("section_index");
-    if (currentUrl == "/src/app/library_user.php")  {
+    if (currentUrl == "/manga/app/library_user.php")  {
         const mangasUser = document.getElementById('mangas');
         mangasUser.innerHTML += [data].map(anime => {
             if(anime.score === null){

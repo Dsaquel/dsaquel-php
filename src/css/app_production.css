@@ -1,4 +1,3 @@
-@import url("modal_component.css"); /* For modal */
 html, body{
     margin: 0;
     padding: 0;
@@ -7,9 +6,11 @@ html, body{
 
 body {
     background-color: #15202B;
+    color: #fff;
 }
 .modal{
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 img {
