@@ -1,15 +1,14 @@
 const baseUrlApi = "https://api.jikan.moe/v4";
 let currentUrl = window.location.pathname;
-if (currentUrl == "/manga/index.php") {
-    window.location.replace("/manga/");
+if (currentUrl == "/src/index.php") {
+    window.location.replace("/src/");
 }
 function onPageLoaded() {
-    if (currentUrl == "/manga/app/library_user.php") {
+    if (currentUrl == "/src/app/library_user.php") {
         getUserAnime();
     } else {
         getTopAnimes();
         getCurrentFilter();
-        getCurrentPagination();
     }
 }
 
@@ -50,8 +49,68 @@ async function getUserAnime() {
         }
     }
 }
+function test(lastPage, currentPage) {
+    const paginaton = document.getElementById("pagination");
+    if (currentPage !== 1 && currentPage !== lastPage) {
+        if (currentPage !== currentPage + 1 && currentPage !== lastPage - 1) {
+            paginaton.innerHTML =
+                `
+           <a href="#">1</a>
+           <a class="disable" href="#">...</a>
+           <a href="#">${currentPage - 1}</a>
+           <a class="active" href="#">${currentPage}</a>
+           <a href="#">${currentPage + 1}</a>
+           <a class="disable" href="#">...</a>
+           <a href="#">${lastPage}</a>
+               `
+        }
+    }
+    if (currentPage === 1) {
+        paginaton.innerHTML =
+            `
+        <a class="active" href="#">${currentPage}</a>
+        <a href="#">${currentPage + 1}</a>
+        <a href="#">${currentPage + 2}</a>
+        <a class="disable" href="#">...</a>
+        <a href="#">${lastPage - 2}</a>
+        <a href="#">${lastPage - 1}</a>
+        <a href="#">${lastPage}</a>
+           `
+    }
+    if (currentPage === lastPage) {
+        paginaton.innerHTML =
+            `
+        <a href="#">1</a>
+       <a href="#">2</a>
+       <a class="disable" href="#">...</a>
+       <a href="#">${lastPage - 10}</a>
+       <a href="#">${lastPage - 2}</a>
+       <a href="#">${lastPage - 1}</a>
+       <a class="active" href="#">${lastPage}</a>
+           `
+    }
+    if (currentPage === 2) {
+        paginaton.innerHTML =
+            `
+        <a href="#">1</a>
+        <a class="active" href="#">${currentPage}</a>
+        <a href="#">${currentPage + 1}</a>
+        <a class="disable" href="#">...</a>
+        <a href="#">${lastPage}</a>
+           `
+    }
+    if (currentPage === lastPage - 1) {
+        paginaton.innerHTML =
+            `
+       <a href="#">1</a>
+       <a class="disable" href="#">...</a>
+       <a href="#">${currentPage - 1}</a>
+       <a class="active" href="#">${currentPage}</a>
+       <a href="#">${currentPage + 1}</a>
+           `
+    }
+}
 
-//pagigne sur la function actuelle
 function getCurrentPagination() {
     let currentFilter = document.getElementById("genderMangas");
     const paginaton = document.getElementById("pagination");
@@ -98,6 +157,11 @@ function getTopAnimes(num) {
 async function fetchData(source, prop) {
     const res = await fetch(baseUrlApi + source);
     const data = await res.json();
+    const url_string = res.url;
+    const url = new URL(url_string);
+    const page = url.searchParams.get("page");
+    test(data.pagination.last_visible_page, parseInt(page));
+    getCurrentPagination();
     if (prop === undefined) {
         updateDom([data]);
     } else {
@@ -107,10 +171,10 @@ async function fetchData(source, prop) {
 
 function updateDom(data) {
     const section = document.getElementById("section_index");
-    if (currentUrl == "/manga/app/library_user.php")  {
+    if (currentUrl == "/src/app/library_user.php") {
         const mangasUser = document.getElementById('mangas');
         mangasUser.innerHTML += [data].map(anime => {
-            if(anime.score === null){
+            if (anime.score === null) {
                 anime.score = "?";
             }
             return `
@@ -163,7 +227,7 @@ function updateDom(data) {
             </section>
         `;
         getUserStatus();
-    } 
+    }
 }
 function displayLoginForm() {
     const x = document.getElementById("logForm");

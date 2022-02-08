@@ -199,6 +199,9 @@ li.dropdown {
   background-color: #4CAF50;
   color: white;
 }
+.disable {
+  pointer-events: none;
+}
 
 #showInformation{
   position: fixed;
