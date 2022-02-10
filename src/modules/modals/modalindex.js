@@ -4,6 +4,8 @@ const url = new URL(url_string);
 const islogged = url.searchParams.get("login");
 const registration = url.searchParams.get("register");
 const accountDesactived = url.searchParams.get("account");
+const userDelete = url.searchParams.get("userDelete");
+const userUpdate = url.searchParams.get("userUpdate");
 
 if ({ login: islogged }.login == "true") {
     const modalLoginValid = new MyCustomModalWindow({
@@ -82,7 +84,6 @@ if ({ account: accountDesactived }.account == "desactived") {
 }
 
 if ({ account: accountDesactived }.account == "active") {
-    const res = await fetch("./components/recup_account.php");
     let modalCreateAccountError = new MyCustomModalWindow({
         show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close
@@ -97,6 +98,35 @@ if ({ account: accountDesactived }.account == "active") {
     modalCreateAccountError.setVisible(true);
 }
 
+if ({ userDelete: userDelete }.userDelete == "true") {
+    let modalUserDelete = new MyCustomModalWindow({
+        show: false, // Show the modal on creation
+        mode: null, // Disable modal mode, allow click outside to close
+        headerColor: '#d9534f',
+        headerText: 'Attention',
+        htmlContent: 'Compte supprimer',
+        theme: 'dark',
+        onClose: (self) => {
+            
+        }
+    })
+    modalUserDelete.setVisible(true);
+}
+
+if ({ userUpdate: userUpdate }.userUpdate == "true") {
+    let modaluserUpdate = new MyCustomModalWindow({
+        show: false, // Show the modal on creation
+        mode: null, // Disable modal mode, allow click outside to close
+        headerColor: '#f0ad4e',
+        headerText: 'Information',
+        htmlContent: 'Identifiants modifiés !',
+        theme: 'dark',
+        onClose: (self) => {
+            
+        }
+    })
+    modaluserUpdate.setVisible(true);
+}
 //modal registration condition
 const icons = document.querySelectorAll("i.far").forEach(icon => {
     icon.onclick = f => {
@@ -184,3 +214,4 @@ const inputs = document.querySelectorAll("#registration input").forEach(input =>
         }
     }
 })
+

@@ -18,7 +18,7 @@ $delete_user->execute(
 session_start();
 session_unset();
 session_destroy();
-header('Location: ../index.php');
+header('Location: ../?userDelete=true');
 
 
 // UPDATE `user` SET `desactivate_user` = '1' WHERE `user`.`id` = :id;

@@ -1,5 +1,5 @@
 <!-- Create account in indexpage -->
-<form id="registration" action="config/insert_users.php" method="POST">
+<form onsubmit="confirmData()" id="registration" action="config/insert_users.php" method="POST">
     <div class="input-group">
         <div class="message">
             <p class="getPlacehodler"></p>
@@ -29,7 +29,6 @@
             <input class="register-box__form-input" placeholder="Pseudo" id="username" name="username">
             <div class="message-error"></div>
         </div>
-
     </div>
     <input type="submit" value="Terminer">
 </form>

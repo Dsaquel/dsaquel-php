@@ -157,11 +157,14 @@ function getTopAnimes(num) {
 async function fetchData(source, prop) {
     const res = await fetch(baseUrlApi + source);
     const data = await res.json();
-    const url_string = res.url;
-    const url = new URL(url_string);
-    const page = url.searchParams.get("page");
-    test(data.pagination.last_visible_page, parseInt(page));
-    getCurrentPagination();
+    if (currentUrl === "/src/") {
+        const url_string = res.url;
+        const url = new URL(url_string);
+        const page = url.searchParams.get("page");
+        test(data.pagination.last_visible_page, parseInt(page));
+        getCurrentPagination();
+    }
+
     if (prop === undefined) {
         updateDom([data]);
     } else {

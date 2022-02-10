@@ -25,8 +25,6 @@ $updateUserQuery->execute([
 ]);
 
 if ($updateUserQuery->execute()) {
-    echo '<script language="javascript">';
-    echo 'confirm("Modification réussite !"); location.href="../index.php"';
-    echo '</script>';
+    header('Location: ../?userUpdate=true');
 }
 ?>
