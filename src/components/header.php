@@ -11,7 +11,8 @@
                     <h2 class="login-box__row login-box__row--title">Se connecter pour continuer</h2>
                     <div class="login-box__row login-box__row--inputs">
                         <input class="login-box__form-input" autocomplete="current-email" name="pseudoOrEmail" placeholder="email ou nom d'utilisateur" required="">
-                        <input type="password" autocomplete="current-password" class="login-box__form-input" name="password" placeholder="mot de passe" required="">
+                        <input id="passwordLogin" type="password" autocomplete="current-password" class="login-box__form-input" name="password" placeholder="mot de passe" required="">
+                        <i class="far fa-eye"></i>
                     </div>
                     <!-- TODO: Delete ? -->
                     <!-- <div class="login-box__row login-box__row--error">
