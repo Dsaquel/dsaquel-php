@@ -29,7 +29,7 @@ if (isset($email) && isset($password) && $num_rows_email === 0 && $num_rows_user
     $result = $checkUserDelete->fetch();
 
     if ($result['desactivate_user'] === "1") {
-        setcookie('id', $result['id'], time()+600);
+        setcookie('id', $result['id'], time() + 600);
         header('Location: ../?account=desactived');
     }
 }
@@ -45,12 +45,20 @@ if ($num_rows_email == 0 && $num_rows_username == 0) {
         'token' => $token,
     ]);
 
-    //TODO: send email with link
-    //$link = "<a href='localhost/email-verification/verify-email.php?key=" . $_POST['email'] . "&token=" . $token . "'>Click and Verify Email</a>";
+
+    $to      = $email;
+    $subject = 'Confirmation de compte';
+    $link = "<a href='http://localhost/src/app/verify_email.php?key=' . $email . '&token=' . $token>Click pour verifier</a>";
+    $message = '<p>Derniere etape, confirmer votre compte en cliquant sur ce lien</p>' . $link;
+    $headers = 'From: contact@dsaquel.com' . "\r\n" .
+        'Reply-To: contact@dsaquel.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
 
     $userLastId = $mysqlClient->lastInsertId();
     if ($userLastId) {
-        header('location: ../index.php');
+        header('location: http://localhost/src/app/verify_email.php?key=' . $email . '&token=' . $token);
     }
 }
 

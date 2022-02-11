@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>User Account Activation by Email Verification using PHP</title>
-    <!-- CSS -->
+    <title>Activation de compte par mailing</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -24,7 +24,7 @@
             ]
         );
         $user = $userQuery->fetch();
-        
+
         $date = date('Y-m-d H:i:s');
         if ($user && $user['email_verified_at'] == NULL) {
             $updateUserQuery = $mysqlClient->prepare('UPDATE user SET email_verified_at = :date WHERE email = :email');
@@ -32,21 +32,22 @@
                 'date' => $date,
                 'email' => $email,
             ]);
-            $msg = "Congratulations! Your email has been verified.";
+            $msg = "Vous voilà des notre bg, tu as tout le site pour toi";
         } else {
-            $msg = "You have already verified your account with us";
+            $msg = "Je te connais déjà toi ? tu fais quoi ici ?";
         }
     } else {
-        $msg = "Danger! Your something goes to wrong.";
+        $msg = "Euh, comment te dire qu'il faut d'abord te creer un compte avant de pouvoir l'activer ? ^^";
     }
     ?>
     <div class="container mt-3">
         <div class="card">
             <div class="card-header text-center">
-                User Account Activation by Email Verification using PHP
+                Activation de compte par mailing
             </div>
             <div class="card-body">
                 <p><?php echo $msg; ?></p>
+                <a class="card-link" href="../?account=verify">Home</a>
             </div>
         </div>
     </div>
