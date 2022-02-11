@@ -58,7 +58,7 @@ if ($num_rows_email == 0 && $num_rows_username == 0) {
 
     $userLastId = $mysqlClient->lastInsertId();
     if ($userLastId) {
-        header('location: http://localhost/src/app/verify_email.php?key=' . $email . '&token=' . $token);
+        header('location: ../?user=insered');
     }
 }
 

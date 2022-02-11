@@ -15,7 +15,7 @@
         include_once('../db/login_database.php');
         $email = $_GET['key'];
         $token = $_GET['token'];
-        $sqlQuery = 'SELECT * FROM user WHERE email = :email AND token = :token';
+        $sqlQuery = 'SELECT * FROM user WHERE email = :email AND email_verification_link = :token';
         $userQuery = $mysqlClient->prepare($sqlQuery);
         $userQuery->execute(
             [
@@ -24,7 +24,6 @@
             ]
         );
         $user = $userQuery->fetch();
-
         $date = date('Y-m-d H:i:s');
         if ($user && $user['email_verified_at'] == NULL) {
             $updateUserQuery = $mysqlClient->prepare('UPDATE user SET email_verified_at = :date WHERE email = :email');
