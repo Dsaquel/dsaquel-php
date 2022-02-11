@@ -34,6 +34,7 @@
             $msg = "Vous voilà des notre bg, tu as tout le site pour toi";
         } else {
             $msg = "Je te connais déjà toi ? tu fais quoi ici ?";
+            //TODO: user who never register can access here
         }
     } else {
         $msg = "Euh, comment te dire qu'il faut d'abord te creer un compte avant de pouvoir l'activer ? ^^";

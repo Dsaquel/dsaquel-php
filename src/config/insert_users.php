@@ -48,7 +48,7 @@ if ($num_rows_email == 0 && $num_rows_username == 0) {
 
     $to      = $email;
     $subject = 'Confirmation de compte';
-    $link = "<a href='http://localhost/src/app/verify_email.php?key=' . $email . '&token=' . $token>Click pour verifier</a>";
+    $link = "<a href='http://localhost/src/app/verify_account.php?key=' . $email . '&token=' . $token>Click pour verifier</a>";
     $message = '<p>Derniere etape, confirmer votre compte en cliquant sur ce lien</p>' . $link;
     $headers = 'From: contact@dsaquel.com' . "\r\n" .
         'Reply-To: contact@dsaquel.com' . "\r\n" .

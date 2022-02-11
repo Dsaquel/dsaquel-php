@@ -19,7 +19,7 @@
                                 Identifiants incorrects
                             </div> -->
                     <div class="login-box_row">
-                        <a href="#" class="login-box_link">J'ai oublié mes identifiants</a>
+                        <a href="app/verify_user_email.php" class="login-box_link">J'ai oublié mon mot de passe</a>
                     </div>
                     <div class="login-box__row login-box__row--actions">
                         <div class="login-box__action">
