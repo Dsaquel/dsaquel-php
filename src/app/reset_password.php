@@ -1,18 +1,3 @@
-<?php
-
-if ($_GET['key'] && $_GET['token']) {
-    include_once('../db/login_database.php');
-    $email = $_GET['key'];
-    $password = $_GET['token'];
-    $queryPrepared = $mysqlClient->prepare('SELECT email, password FROM user WHERE md5(email)= :email AND md5(password)= :password');
-    $queryPrepared->execute([
-        'email' => $email,
-        'password' => $password,
-    ]);
-    $result = $queryPrepared->fetch();
-}
-?>
-
 <html lang="en">
 
 <head>
@@ -26,7 +11,7 @@ if ($_GET['key'] && $_GET['token']) {
 <body>
     <div class="bloc_page">
         <form method="POST" action="../config/reset_user_password.php">
-            <input type="hidden" name="email" value="<?php echo $result['email']; ?>">
+            <input type="hidden" name="email" value="<?php echo $_GET['key']; ?>">
             <p>Entre ton nouveau mdp</p>
             <input type="password" name='password'>
             <input type="submit" name="submit_password">
