@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/login_popup.css">
     <link rel="stylesheet" href="css/modal_component.css">
     <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/pagination.css">
 </head>
 
 <body>

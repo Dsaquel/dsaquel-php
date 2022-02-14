@@ -181,28 +181,6 @@ li.dropdown {
   text-align: center;
 }
 
-#pagination {
-  align-self: center;
-  display: inline-block;
-}
-
-#pagination a {
-  color: #fff;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-#pagination a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.disable {
-  pointer-events: none;
-}
 
 #showInformation {
   position: fixed;
@@ -214,9 +192,6 @@ li.dropdown {
   margin-bottom: 45px;
 }
 
-#pagination a:hover:not(.active) {
-  background-color: #ddd;
-}
 
 #loader {
   border: 16px solid #f3f3f3;
@@ -225,14 +200,12 @@ li.dropdown {
   width: 120px;
   height: 120px;
   -webkit-animation: spin 2s linear infinite;
-  /* Safari */
   animation: spin 2s linear infinite;
   margin: auto;
   z-index: 99;
   background-color: #15202B;
 }
 
-/* Safari */
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
