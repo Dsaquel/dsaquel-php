@@ -91,6 +91,9 @@ input[type=submit] {
     border: 1px solid green;
 }
 
+#confirmation{
+    display: none;
+}
 /* TODO: form valid or invalid dynamic ? doesn't work yet
 
 .valid:before {

@@ -29,7 +29,6 @@
             <input class="register-box__form-input" placeholder="Pseudo" id="username" name="username">
             <div class="message-error"></div>
         </div>
-
     </div>
     <input type="submit" value="Terminer">
 </form>

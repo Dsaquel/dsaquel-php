@@ -11,7 +11,7 @@ if (isset($userId) && isset($manga)) {
         'manga' => $manga,
         'userId' => $userId,
     ]);
-    header('Location: ../app/library_user.php');
+    header('Location: ../app/library_user.php?insertAnime=true');
 
 } else {
     header('location: ../index.php');

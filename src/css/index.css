@@ -181,26 +181,8 @@ li.dropdown {
   text-align: center;
 }
 
-#pagination {
-  align-self: center;
-  display: inline-block;
-}
 
-#pagination a {
-  color: #fff;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-#pagination a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-#showInformation{
+#showInformation {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -210,6 +192,36 @@ li.dropdown {
   margin-bottom: 45px;
 }
 
-#pagination a:hover:not(.active) {
-  background-color: #ddd;
+
+#loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  z-index: 99;
+  background-color: #15202B;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

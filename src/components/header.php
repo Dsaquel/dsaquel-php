@@ -11,14 +11,15 @@
                     <h2 class="login-box__row login-box__row--title">Se connecter pour continuer</h2>
                     <div class="login-box__row login-box__row--inputs">
                         <input class="login-box__form-input" autocomplete="current-email" name="pseudoOrEmail" placeholder="email ou nom d'utilisateur" required="">
-                        <input type="password" autocomplete="current-password" class="login-box__form-input" name="password" placeholder="mot de passe" required="">
+                        <input id="passwordLogin" type="password" autocomplete="current-password" class="login-box__form-input" name="password" placeholder="mot de passe" required="">
+                        <i class="far fa-eye"></i>
                     </div>
                     <!-- TODO: Delete ? -->
                     <!-- <div class="login-box__row login-box__row--error">
                                 Identifiants incorrects
                             </div> -->
                     <div class="login-box_row">
-                        <a href="#" class="login-box_link">J'ai oublié mes identifiants</a>
+                        <a href="app/verify_user_email.php" class="login-box_link">J'ai oublié mon mot de passe</a>
                     </div>
                     <div class="login-box__row login-box__row--actions">
                         <div class="login-box__action">

@@ -30,6 +30,7 @@ if (isset($userId)) {
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/small_res_style.css">
+    <link rel="stylesheet" href="../css/modal_component.css">
     <title><?php echo $_SESSION['LOGGED_USER']['username']; ?> - bibliothèque</title>
 </head>
 
@@ -40,9 +41,11 @@ if (isset($userId)) {
             <div class="changeImg"></div>
         </a>
         <div id="section_index">
+            <?php include_once('../components/modal.php'); ?>
             <section>
                 <h3>
                 </h3>
+                <div id="loader"></div>
                 <div id="mangas" class="dsaquel-row">
                     <!--MANGAS-->
                 </div>
@@ -50,7 +53,8 @@ if (isset($userId)) {
     </div>
     <script src="../js/index.js"></script>
     <script src="https://kit.fontawesome.com/045553b9e0.js" crossorigin="anonymous"></script>
-
+    <script type="module" src="../modules/modals/modalLibrary.js"></script>
+    <script type="module" src="../modules/modals/modal.js"></script>
 </body>
 
 </html>

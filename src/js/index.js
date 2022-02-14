@@ -1,20 +1,21 @@
 const baseUrlApi = "https://api.jikan.moe/v4";
 let currentUrl = window.location.pathname;
-if (currentUrl == "/manga/index.php") {
-    window.location.replace("/manga/");
+if (currentUrl == "/src/index.php") {
+    window.location.replace("/src/");
 }
 function onPageLoaded() {
-    if (currentUrl == "/manga/app/library_user.php") {
+    if (currentUrl == "/src/app/library_user.php") {
         getUserAnime();
     } else {
         getTopAnimes();
         getCurrentFilter();
-        getCurrentPagination();
     }
 }
 
 
 function getAnimes(event) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "none"
     event.preventDefault();
     const searchQuery = document.getElementById("search").value;
     getCurrentFilter(searchQuery);
@@ -22,6 +23,8 @@ function getAnimes(event) {
 }
 
 function filterGenre(num, page) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "block"
     if (page === undefined) {
         page = '1';
     }
@@ -29,6 +32,8 @@ function filterGenre(num, page) {
 }
 
 function seasonLater(num) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "block"
     if (num === undefined) {
         num = 1;
     }
@@ -51,10 +56,104 @@ async function getUserAnime() {
     }
 }
 
-//pagigne sur la function actuelle
+const Pagination = {
+
+    code: '',
+
+    Extend: function(data) {
+        data = data || {};
+        Pagination.size = data.size || 800;
+        Pagination.page = data.page || 1;
+        Pagination.step = data.step || 3;
+    },
+
+    Add: function(s, f) {
+        for (let i = s; i < f; i++) {
+            Pagination.code += '<a>' + i + '</a>';
+        }
+    },
+
+    Last: function() {
+        Pagination.code += '<i>...</i><a>' + Pagination.size + '</a>';
+    },
+
+    First: function() {
+        Pagination.code += '<a>1</a><i>...</i>';
+    },
+
+    Click: function() {
+        Pagination.page = +this.innerHTML;
+        Pagination.Start();
+    },
+
+    Bind: function() {
+        const a = Pagination.e.getElementsByTagName('a');
+        for (let i = 0; i < a.length; i++) {
+            if (+a[i].innerHTML === Pagination.page) a[i].className = 'current';
+            a[i].addEventListener('click', Pagination.Click, false);
+        }
+    },
+
+    Finish: function() {
+        Pagination.e.innerHTML = Pagination.code;
+        Pagination.code = '';
+        Pagination.Bind();
+    },
+
+    Start: function() {
+        if (Pagination.size < Pagination.step * 2 + 6) {
+            Pagination.Add(1, Pagination.size + 1);
+        }
+        else if (Pagination.page < Pagination.step * 2 + 1) {
+            Pagination.Add(1, Pagination.step * 2 + 4);
+            Pagination.Last();
+        }
+        else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+            Pagination.First();
+            Pagination.Add(Pagination.size - Pagination.step * 2 - 2, Pagination.size + 1);
+        }
+        else {
+            Pagination.First();
+            Pagination.Add(Pagination.page - Pagination.step, Pagination.page + Pagination.step + 1);
+            Pagination.Last();
+        }
+        Pagination.Finish();
+    },
+
+    Buttons: function(e) {
+        const nav = e.getElementsByTagName('a');
+    },
+
+    Create: function(e) {
+
+        const html = [
+            '<span id="paginationNumber"></span>',
+        ];
+
+        e.innerHTML = html.join('');
+        Pagination.e = e.getElementsByTagName('span')[0];
+        Pagination.Buttons(e);
+    },
+
+    Init: function(e, data) {
+        Pagination.Extend(data);
+        Pagination.Create(e);
+        Pagination.Start();
+    }
+};
+
+const init = function(last_visible_page, currentPage) {
+    Pagination.Init(document.getElementById('pagination'), {
+        size: last_visible_page,
+        page: currentPage,
+        step: 3
+    });
+};
+
+
 function getCurrentPagination() {
     let currentFilter = document.getElementById("genderMangas");
-    const paginaton = document.getElementById("pagination");
+    const paginaton = document.getElementById("paginationNumber");
     paginaton.childNodes.forEach(child => {
         child.addEventListener("click", function () {
             if (currentFilter.innerHTML === "Prochainement") {
@@ -89,6 +188,8 @@ function getCurrentPagination() {
 }
 
 function getTopAnimes(num) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "block"
     if (num === undefined) {
         num = 1;
     }
@@ -96,8 +197,18 @@ function getTopAnimes(num) {
 }
 
 async function fetchData(source, prop) {
+    const loader = document.getElementById("loader");
+    loader.style.display = "block";
     const res = await fetch(baseUrlApi + source);
     const data = await res.json();
+    if (currentUrl === "/src/") {
+        const url_string = res.url;
+        const url = new URL(url_string);
+        const page = url.searchParams.get("page");
+        init(data.pagination.last_visible_page, parseInt(page));
+        getCurrentPagination();
+    }
+
     if (prop === undefined) {
         updateDom([data]);
     } else {
@@ -106,11 +217,12 @@ async function fetchData(source, prop) {
 }
 
 function updateDom(data) {
+    const loader = document.getElementById("loader");
     const section = document.getElementById("section_index");
-    if (currentUrl == "/manga/app/library_user.php")  {
+    if (currentUrl == "/src/app/library_user.php") {
         const mangasUser = document.getElementById('mangas');
         mangasUser.innerHTML += [data].map(anime => {
-            if(anime.score === null){
+            if (anime.score === null) {
                 anime.score = "?";
             }
             return `
@@ -156,14 +268,14 @@ function updateDom(data) {
             </div>
             `;
         });
-
         section.innerHTML = `
             <section>
                 <div id="mangas" class="dsaquel-row">${animesHTML.join("")}</div>
             </section>
         `;
         getUserStatus();
-    } 
+    }
+    loader.style.display = "none";
 }
 function displayLoginForm() {
     const x = document.getElementById("logForm");

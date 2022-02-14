@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/login_popup.css">
     <link rel="stylesheet" href="css/modal_component.css">
     <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/pagination.css">
 </head>
 
 <body>
@@ -29,23 +30,18 @@
             include_once('components/header.php');
             include_once('components/filter_mangas.php');
             include_once('components/messageInformation.php');
-        }?>
+        } ?>
         <form id="search_form" onsubmit="getAnimes(event)">
             <label for="search">Recherche ton anime préféré :</label>
             <input type="text" id="search" name="search" placeholder="One piece">
         </form>
         <main>
             <h3 id="genderMangas"></h3>
+            <div id="loader"></div>
             <div id="section_index">
             </div>
         </main>
         <div id="pagination">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
         </div>
         <?php include_once('components/footer.php'); ?>
     </div>

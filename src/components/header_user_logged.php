@@ -11,15 +11,6 @@
                     <img class="simple-menu__header-icon" alt="">
                     <div class="u-relative"><?php echo $_SESSION['LOGGED_USER']['username'] ?></div>
                 </a>
-
-                <a class="simple-menu__item" href="app/production.php">
-                    Mon profil
-                </a>
-
-                <a class="simple-menu__item" href="app/production.php">
-                    Amis
-                </a>
-
                 <a class="simple-menu__item" href="app/update_account_user.php?id=<?php echo $_SESSION['LOGGED_USER']["id"]; ?>">
                     Paramètres
                 </a>
