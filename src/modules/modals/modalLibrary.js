@@ -19,7 +19,6 @@ if ({ insertAnime: insertAnime }.insertAnime == "true") {
 }
 
 if ({ deleteAnime: deleteAnime }.deleteAnime == "true") {
-    console.log("toto")
     let modalDeleteAnime = new MyCustomModalWindow({
         show: false, // Show the modal on creation
         mode: null, // Disable modal mode, allow click outside to close

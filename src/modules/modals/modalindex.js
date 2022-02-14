@@ -7,6 +7,8 @@ const accountDesactived = url.searchParams.get("account");
 const userDelete = url.searchParams.get("userDelete");
 const userUpdate = url.searchParams.get("userUpdate");
 const userInsered = url.searchParams.get("user");
+const emailReset = url.searchParams.get("emailReset");
+
 if ({ login: islogged }.login == "true") {
     const modalLoginValid = new MyCustomModalWindow({
         show: false, // Show the modal on creation
@@ -141,6 +143,21 @@ if ({ user: userInsered }.user == "insered") {
         }
     })
     modalVerifyAccount.setVisible(true);
+}
+
+if ({ emailReset: emailReset }.emailReset == "send") {
+    const modalResetPassword = new MyCustomModalWindow({
+        show: false, // Show the modal on creation
+        mode: null, // Disable modal mode, allow click outside to close
+        headerColor: '#5cb85c',
+        headerText: 'Information',
+        htmlContent: '<p>Un lien pour reset votre mot de passe a été envoyé</p>',
+        theme: 'dark',
+        onClose: (self) => {
+            
+        }
+    })
+    modalResetPassword.setVisible(true);
 }
 
 //modal registration condition

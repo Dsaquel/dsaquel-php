@@ -50,7 +50,7 @@ $user = $userQuery->fetchAll(PDO::FETCH_ASSOC);
 
                         <div class="account-edit__input-group">
                             <div class="account-edit-entry">
-                                <input class="account-edit-entry__input" type="email" name="email" value="<?php echo $user[0]['email']; ?>" disabled>
+                                <input class="account-edit-entry__input" type="email" name="email" value="<?php echo $user[0]['email']; ?>">
                                 <label class="account-edit-entry__label" for="email">email:</label>
                             </div>
 

@@ -201,7 +201,6 @@ async function fetchData(source, prop) {
     loader.style.display = "block";
     const res = await fetch(baseUrlApi + source);
     const data = await res.json();
-    console.log(data)
     if (currentUrl === "/src/") {
         const url_string = res.url;
         const url = new URL(url_string);

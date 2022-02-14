@@ -12,17 +12,12 @@ if (isset($_POST['submit_email']) && $_POST['email']) {
 
     $to      = $_POST['email'];
     $subject = 'Reset password';
-    $link = "<a href='http://localhost/src/app/reset_password.php?key=' . $email . '&token=' . $password>Click pour reset le password</a>";
-    $message = '<p>Clique sur le lien pour reset ton mot de passe bg</p>' . $link;
-    $headers = 'From: contact@dsaquel.com' . "\r\n" .
-      'Reply-To: contact@dsaquel.com' . "\r\n" .
-      'X-Mailer: PHP/' . phpversion();
+    $link = "https://dsaquel.com/manga/app/reset_password.php?key=$email&token=$password";
+    $message = 'Clique sur ce lien pour reset ton mot de passe bg ' . $link;
+    $headers = 'From: contact@dsaquel.com' . "\r\n" .'Reply-To: contact@dsaquel.com' . "\r\n" .'X-Mailer: PHP/' . phpversion();
 
     mail($to, $subject, $message, $headers);
-    echo "toto";
-    header('location: http://localhost/src/app/reset_password.php?key=' . $email . '&token=' . $password);
+    header('location: ../?emailReset=send');
   }
 }
 ?>
-
-<p></p>
