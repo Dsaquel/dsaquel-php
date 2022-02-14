@@ -14,6 +14,8 @@ function onPageLoaded() {
 
 
 function getAnimes(event) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "none"
     event.preventDefault();
     const searchQuery = document.getElementById("search").value;
     getCurrentFilter(searchQuery);
@@ -21,6 +23,8 @@ function getAnimes(event) {
 }
 
 function filterGenre(num, page) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "block"
     if (page === undefined) {
         page = '1';
     }
@@ -28,6 +32,8 @@ function filterGenre(num, page) {
 }
 
 function seasonLater(num) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "block"
     if (num === undefined) {
         num = 1;
     }
@@ -64,7 +70,7 @@ function test(lastPage, currentPage) {
            <a href="#">${lastPage}</a>
                `
         }
-    }
+    } 
     if (currentPage === 1) {
         paginaton.innerHTML =
             `
@@ -148,6 +154,8 @@ function getCurrentPagination() {
 }
 
 function getTopAnimes(num) {
+    const paginaton = document.getElementById("pagination");
+    paginaton.style.display = "block"
     if (num === undefined) {
         num = 1;
     }
@@ -155,7 +163,7 @@ function getTopAnimes(num) {
 }
 
 async function fetchData(source, prop) {
-    const loader = document.getElementById("loader")
+    const loader = document.getElementById("loader");
     loader.style.display = "block";
     const res = await fetch(baseUrlApi + source);
     const data = await res.json();
