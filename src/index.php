@@ -36,6 +36,7 @@
         </form>
         <main>
             <h3 id="genderMangas"></h3>
+            <div id="loader"></div>
             <div id="section_index">
             </div>
         </main>

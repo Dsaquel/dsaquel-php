@@ -155,6 +155,8 @@ function getTopAnimes(num) {
 }
 
 async function fetchData(source, prop) {
+    const loader = document.getElementById("loader")
+    loader.style.display = "block";
     const res = await fetch(baseUrlApi + source);
     const data = await res.json();
     if (currentUrl === "/src/") {
@@ -173,6 +175,7 @@ async function fetchData(source, prop) {
 }
 
 function updateDom(data) {
+    const loader = document.getElementById("loader");
     const section = document.getElementById("section_index");
     if (currentUrl == "/src/app/library_user.php") {
         const mangasUser = document.getElementById('mangas');
@@ -223,7 +226,6 @@ function updateDom(data) {
             </div>
             `;
         });
-
         section.innerHTML = `
             <section>
                 <div id="mangas" class="dsaquel-row">${animesHTML.join("")}</div>
@@ -231,6 +233,7 @@ function updateDom(data) {
         `;
         getUserStatus();
     }
+    loader.style.display = "none";
 }
 function displayLoginForm() {
     const x = document.getElementById("logForm");

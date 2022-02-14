@@ -199,11 +199,12 @@ li.dropdown {
   background-color: #4CAF50;
   color: white;
 }
+
 .disable {
   pointer-events: none;
 }
 
-#showInformation{
+#showInformation {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -215,4 +216,39 @@ li.dropdown {
 
 #pagination a:hover:not(.active) {
   background-color: #ddd;
+}
+
+#loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+  margin: auto;
+  z-index: 99;
+  background-color: #15202B;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

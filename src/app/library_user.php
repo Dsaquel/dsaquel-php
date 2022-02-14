@@ -45,6 +45,7 @@ if (isset($userId)) {
             <section>
                 <h3>
                 </h3>
+                <div id="loader"></div>
                 <div id="mangas" class="dsaquel-row">
                     <!--MANGAS-->
                 </div>

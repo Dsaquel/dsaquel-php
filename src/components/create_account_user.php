@@ -1,5 +1,5 @@
 <!-- Create account in indexpage -->
-<form onsubmit="confirmData()" id="registration" action="config/insert_users.php" method="POST">
+<form id="registration" action="config/insert_users.php" method="POST">
     <div class="input-group">
         <div class="message">
             <p class="getPlacehodler"></p>
