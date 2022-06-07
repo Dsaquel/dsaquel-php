@@ -1,0 +1,44 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family:arial;
+}
+
+.form-message{
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+.form-content:last-child{
+    text-align: right;
+}
+.grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 50px;
+    font-weight: 200;
+    background-color: wheat;
+    color: white;
+}
+.grid+.grid {
+    margin-top: 3px;
+}
+.champs{
+    width: 300px;
+    margin-left: 5px;
+}
+
+#messageEmail{
+    width: 1300px;
+    height: 260px;
+}
+
+#valide-contact{
+    margin-left: 10px;
+    margin-top: 7px;
+}

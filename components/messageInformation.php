@@ -1,0 +1,1 @@
+<button id="showInformation"><i class="fas fa-info fa-2x"></i></button>
